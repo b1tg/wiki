@@ -5,6 +5,29 @@ import "html/template"
 var emptyPageText = []byte(`# Empty page
 So this is an empty page`)
 
+var list = template.Must(template.New("list").Parse(`<!DOCTYPE html>
+<html>
+	<head>
+		<title>All Posts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		` + stylesheet + `
+		</style>
+		<link rel="stylesheet"
+		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+	</head>
+	<body>
+		<ol>
+		{{range $index, $ele := .}}
+			<li><a href="./{{$ele}}">{{$ele}}</a></li>
+		{{end}}	
+		</ol>
+	</body>
+</html>`))
+
 var show = template.Must(template.New("show").Parse(`<!DOCTYPE html>
 <html>
 	<head>
@@ -12,9 +35,17 @@ var show = template.Must(template.New("show").Parse(`<!DOCTYPE html>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 		` + stylesheet + `
+		
 		</style>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="./highlight/styles/default.css">
+<script src="./highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 	</head>
 	<body>
+		<a href="./">GO TO INDEX</a>
 		<form action="{{.Path}}" method="GET">
     	<button type="submit">Edit</button>
 		</form>
@@ -62,8 +93,12 @@ const stylesheet = `
 	}
 
 	body {
-		font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-		font-weight: 300;
+		font-family: 'Noto Sans SC', sans-serif;
+
+	 /* 
+	 font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	*/	
+	 font-weight: 300;
 		font-size: 16px;
 		line-height: 1.5;
 		margin: 0;

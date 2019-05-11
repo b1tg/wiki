@@ -32,19 +32,42 @@ func (s *Server) redirect(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, target, 302)
 	}
 }
+func (s *Server) hl(w http.ResponseWriter, r *http.Request) {
+	print("==fkskfjk")
+	// http.Handle("/highlight/", http.StripPrefix("/highlight/", http.FileServer(http.Dir("highlight"))))
 
+	// if path := r.URL.Path; len(r.URL.Path) > 1 {
+	// 	target := strings.TrimSuffix(path, "/")
+
+	// 	if target == "/home" {
+	// 		target = "/"
+	// 	}
+
+	// 	http.Redirect(w, r, target, 302)
+	// }
+}
+
+// func (s *Server) list(w http.ResponseWriter, r *http.Request) {
+// 	s.
+
+// }
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Server", "wiki")
 
 	s.logger.Println(r.Method, r.URL.String())
+	// http.Handle("/highlight/", http.StripPrefix("/highlight/", http.FileServer(http.Dir("highlight"))))
 
 	switch {
 	case r.Method == http.MethodPost:
 		s.save(w, r)
 	case r.URL.Path == "/favicon.ico":
 		s.favicon(w, r)
-	case r.URL.Path == "/home":
-		s.redirect(w, r)
+	case r.URL.Path == "/":
+		s.list(w, r)
+	// case strings.HasPrefix(r.URL.Path, "/highlight"):
+	// 	println("==got highlight: ", r.URL.Path)
+
+	// 	s.hl(w, r)
 	case strings.HasSuffix(r.URL.Path, "/edit"):
 		s.edit(w, r)
 	case strings.HasSuffix(r.URL.Path, "/") && len(r.URL.Path) > 1:

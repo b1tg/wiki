@@ -50,10 +50,12 @@ func main() {
 
 	hs := setup(logger, db)
 
-	go graceful(hs, 8*time.Second)
+	// go graceful(hs, 8*time.Second)
 
 	logger.Println("Listening on http://0.0.0.0" + hs.Addr)
-	if err := hs.ListenAndServe(); err != nil {
+	http.Handle("/highlight/", http.StripPrefix("/highlight/", http.FileServer(http.Dir("highlight"))))
+	http.Handle("/", hs.Handler)
+	if err := http.ListenAndServe(":7272", nil); err != nil {
 		logger.Fatal(err)
 	}
 }

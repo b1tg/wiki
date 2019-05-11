@@ -16,3 +16,12 @@ func (tx *Tx) Page(name []byte) (*Page, error) {
 
 	return p, p.Load()
 }
+
+func (tx *Tx) Pages() ([]string, error) {
+	p := &Page{
+		Tx:   tx,
+		Name: []byte(""),
+	}
+	names, err := p.list()
+	return names, err
+}

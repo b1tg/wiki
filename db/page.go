@@ -26,6 +26,18 @@ func (p *Page) get() ([]byte, error) {
 	return text, nil
 }
 
+func (p *Page) list() ([]string, error) {
+	b := p.Tx.Bucket(p.bucket())
+	c := b.Cursor()
+	names := make([]string, 0)
+	for k, _ := c.First(); k != nil; k, _ = c.Next() {
+		// fmt.Printf("key=%s, value=%s\n", k, v)
+		names = append(names, string(k))
+	}
+
+	return names, nil
+}
+
 // Load retrieves a page from the database.
 func (p *Page) Load() error {
 	text, err := p.get()
