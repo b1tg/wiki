@@ -1,0 +1,11 @@
+[book]
+authors = ["b1tg"]
+language = "en"
+multilingual = false
+src = "src"
+
+[output.html.playground]
+editable = true
+
+[output.html]
+additional-css = ["custom.css"]
