@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>simple_visor_read</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="custom.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">1.</strong> Lan</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rust.html"><strong aria-hidden="true">1.1.</strong> rust</a></li><li class="chapter-item expanded "><a href="golang.html"><strong aria-hidden="true">1.2.</strong> golang</a></li><li class="chapter-item expanded "><a href="python.html"><strong aria-hidden="true">1.3.</strong> python</a></li><li class="chapter-item expanded "><a href="csharp.html"><strong aria-hidden="true">1.4.</strong> csharp</a></li></ol></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">2.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="unix.html"><strong aria-hidden="true">2.1.</strong> unix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="linux-arch.html"><strong aria-hidden="true">2.1.1.</strong> arch linux</a></li></ol></li><li class="chapter-item expanded "><a href="bash.html"><strong aria-hidden="true">2.2.</strong> bash</a></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">2.3.</strong> tools</a></li></ol></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">3.</strong> security</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="windbg_cheatsheet.html"><strong aria-hidden="true">3.1.</strong> _windbg_cheatsheet</a></li><li class="chapter-item expanded "><a href="re.html"><strong aria-hidden="true">3.2.</strong> re</a></li><li class="chapter-item expanded "><a href="fuzz.html"><strong aria-hidden="true">3.3.</strong> fuzz</a></li></ol></li><li class="chapter-item expanded "><a href="vt.html"><strong aria-hidden="true">4.</strong> vt</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SimpleVisorRead.html" class="active"><strong aria-hidden="true">4.1.</strong> simple_visor_read</a></li><li class="chapter-item expanded "><a href="vt-faq.html"><strong aria-hidden="true">4.2.</strong> vt-faq</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="source-code-read-simplevisor--pinback-vt"><a class="header" href="#source-code-read-simplevisor--pinback-vt">Source Code Read: SimpleVisor  <a href="./vt.html">Pinback: vt</a></a></h1>
+<p>从驱动入口 DriverEntry 开始读：</p>
+<p>首先做了一个 power state callback，之后加载 hypervisor</p>
+<p>hypervisor 加载的逻辑在函数 ShvLoad 中，剩下的阅读都从这个函数出发。</p>
+<p>首先需要让所有的 LP（Logic Processor） 进入 VMX root 模式</p>
+<pre><code class="language-c++">ShvLoad
+	ShvOsRunCallbackOnProcessors(ShvVpLoadCallback, &amp;callbackContext);
+		KeGenericCallDpc // callback
+			ShvOsDpcRoutine // callback
+				ShvVpLoadCallback // 在这个函数中cpu 被 hyperjacked，~返回后就是unload和清理了~
+				// do cleanup:
+				// ShvVmxCleanup, KeSignalCallDpcSynchronize, KeSignalCallDpcDone
+				
+				
+
+
+ShvVpLoadCallback
+	ShvVmxProbe // 检查 VMX root mode 是否支持
+	PSHV_VP_DATA vpData // 初始化vpData，代表一个~LP~的数据结构
+	vpData-&gt;SystemDirectoryTableBase = Context-&gt;Cr3; // TODO: 看注释，什么是PML4
+	ShvVpInitialize(vpData) // 初始化VP
+	if (ShvIsOurHypervisorPresent() == FALSE) // 通过cpuid检查当前hypervisor是否初始化成功
+											  // ~此时cpuid应该已经被hook~		
+	InterlockedIncrement(Context-&gt;InitCount); // 增加初始化成功的LP计数， This CPU is hyperjacked!
+
+
+
+ShvVpInitialize(Data)
+	ShvOsPrepareProcessor // dump,只在uefi时有用
+	ShvCaptureSpecialRegisters(&amp;Data-&gt;SpecialRegisters); // 初始化vpData的SpecialRegisters:
+														  // cr0, cr3, cr4, debug_ctl, msr_gs_base,
+														  // kernel_dr7, gdtr.limit, idtr.limit, tr, ldtr
+	ShvOsCaptureContext(&amp;Data-&gt;ContextFrame);
+		RtlCaptureContext(ContextRecord); // windows提供的函数：
+										  // Retrieves a context record in the context of the caller.
+	status = ShvVmxLaunchOnVp(Data);  // 如果EFLAGS_ALIGN_CHECK没有set，为当前处理器初始化VMX
+		
+
+ShvVmxLaunchOnVp(VpData)
+	VpData-&gt;MsrData[i].QuadPart = readmsr(MSR_IA32_VMX_BASIC + i); // 初始化VMX相关的一系列MSRs
+	ShvVmxMtrrInitialize(VpData);  // 初始化 MTRR (Memory Type Range Registers) 相关的一系列MSRs，
+								   // 这似乎是为了EPT准备的。				
+	ShvVmxEptInitialize // 初始化 EPT structures
+	ShvVmxEnterRootModeOnVp(VpData) // Attempt to enter VMX root mode on this processor.
+	ShvVmxSetupVmcsForVp(VpData); // 初始化 VMCS，包括guest和host state，大多数“可选监控项”都在这里面
+	ShvVmxLaunch()
+		vmlaunch // 这里不该返回了，返回就是失败了，后面是失败处理
+				 // 如果成功rip会指向 ShvVpRestoreAfterLaunch
+		failureCode = (INT32)ShvVmxRead(VM_INSTRUCTION_ERROR);
+		vmoff 
+	
+ShvVmxEnterRootModeOnVp(VpData)
+	// - 做一些 check
+	// - 写 revision ID到VmxOn和vmcs里面
+	// - 设置一些physical addresses
+	// - 奇怪的掩码方式设置CR0和cr4
+	__vmx_on // Enable VMX Root Mode
+	__vmx_vmclear // Clear the state of the VMCS, setting it to Inactive
+	__vmx_vmptrld // Load the VMCS, setting its state to Active
+	// 至此 VMX Root Mode is enabled, with an active VMCS.
+	
+==== 重要的数据结构 ====
+
+typedef struct _SHV_VP_DATA
+{
+    union
+    {
+        DECLSPEC_ALIGN(PAGE_SIZE) UINT8 ShvStackLimit[KERNEL_STACK_SIZE];
+        struct
+        {
+            SHV_SPECIAL_REGISTERS SpecialRegisters;
+            CONTEXT ContextFrame;
+            UINT64 SystemDirectoryTableBase;
+            LARGE_INTEGER MsrData[17];
+            SHV_MTRR_RANGE MtrrData[16];
+            UINT64 VmxOnPhysicalAddress;
+            UINT64 VmcsPhysicalAddress;
+            UINT64 MsrBitmapPhysicalAddress;
+            UINT64 EptPml4PhysicalAddress;
+            UINT32 EptControls;
+        };
+    };
+
+    DECLSPEC_ALIGN(PAGE_SIZE) UINT8 MsrBitmap[PAGE_SIZE];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_EPML4E Epml4[PML4E_ENTRY_COUNT];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_PDPTE Epdpt[PDPTE_ENTRY_COUNT];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_LARGE_PDE Epde[PDPTE_ENTRY_COUNT][PDE_ENTRY_COUNT];
+
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_VMCS VmxOn;
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_VMCS Vmcs;
+} SHV_VP_DATA, *PSHV_VP_DATA;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="vt.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="vt-faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="vt.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="vt-faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
