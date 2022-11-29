@@ -35,9 +35,11 @@ jobs:
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: '0.4.10'
+      - run: ls book
       - run: mdbook build
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          folder: book # The folder the action should deploy.           
-  
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
