@@ -5,7 +5,7 @@ date: 2020-10-14
 bigimg: [{src: "/primitives/img/unsplash-josiah-ingels.jpg", desc: "Path"}]
 --- -->
 
-# test123456
+# how to write test
 
 ```rs
 #[cfg(test)]
@@ -16,4 +16,12 @@ mod tests {
         // ...
     }
 }
+```
+
+```rs
+#[test]
+fn test_123() {
+    // ...
+}
+
 ```
