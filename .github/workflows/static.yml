@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          pwd && ls && echo "whoami"    
+          pwd && ls ../ && echo "whoami"    
       - run: |
           mkdir public && cp -r public/ public/
       - name: GitHub Pages
