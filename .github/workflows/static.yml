@@ -31,14 +31,13 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
-      - run: |
-          pwd && ls  && ls ../
-      #- run: |
-      #    mkdir public && cp -r book/ public/
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: '0.4.10'
+      - run: mdbook build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          folder: book # The folder the action should deploy. 
-        #env:
-        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}            
+          folder: book # The folder the action should deploy.           
   

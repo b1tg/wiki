@@ -7,7 +7,7 @@
   - [csharp](./csharp.md)
 - [other](./other.md)
   - [unix](./unix.md)
-    - [arch linux](./linux-arch.md)
+  - [arch linux](./linux-arch.md)
   - [bash](./bash.md)
   - [tools](./tools.md)
 - [security](./security.md)
