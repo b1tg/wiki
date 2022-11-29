@@ -28,10 +28,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
       - run: |
-          pwd && ls ../ && echo "whoami"    
-      - run: |
-          mkdir public && cp -r public/ public/
+          pwd && ls  && ls ../
+#      - run: |
+#          mkdir public && cp -r public/ public/
       - name: GitHub Pages
         # You may pin to the exact commit or the version.
         # uses: crazy-max/ghaction-github-pages@c0d7ff0487ee0415efb7f32dab10ea880330b1dd
