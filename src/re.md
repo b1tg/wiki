@@ -63,11 +63,80 @@ func1(int a, int b, int c, int d, int e, int f);
 - `p` step over
 - `t` (trace) step into
 
+## windbg basic
+- `g` 运行
+- `r` 查看所有寄存器
+  - `r rax` 查看 rax
+- `u` 查看当前eip的反汇编
+- 直接按回车执行上一条命令
+- 分号做分割，可以在一行执行多条命令
+- `ctrl + break` 强制停止命令
+
+windbg中有一些伪寄存器，最常见的就是memory界面默认显示的 `@$scopeip`，表示当前 eip
+
+有如下这些常用伪寄存器，完整列表见[官网](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/pseudo-register-syntax)
+
+| pseudo register | desc |
+| --------------- | ---- |
+| `$exentry`|   入口点|
+| `$proc`   |   进程结构(EPROCESS)指针 |
+| `$peb`   |   进程PEB(process environment block)结构 |
+| `$teb`   |   进程TEB(thread environment block)结构 |
+
+
+### 执行
+
+`p` 命令：
+
+```
+[~Thread] p[r] [= StartAddress] [Count] ["Command"] 
+```
+
+- 加 `r` 禁止寄存器显示
+- 默认从 eip 开始执行，加 `= StartAddress` 从该地址开始执行
+- 加 `Count` 表示执行的行数或者指令数（？如何区分），默认是 1
+  - 切换汇编模式：`l-t`
+  - 切换源码模式：`l+t` （更多：[l+,l-指令文档](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/l---l---set-source-options-)）
+- 加 `"Command"` 表示指令数执行完后需要执行的命令
+
+
+t命令和p命令类似，区别是：t是step in，p是step over
+
+- `pa|ta [r] [=StartAddress] StopAddress` 执行到指定地址
+- `pc|tc [r] [=StratAddress] [Count]` 执行到下一个函数调用
+- `tb [r] [=StartAddress] [Count]` 执行到下一个分支
+
+### 断点
+
+```
+bp[ID] [Options] [Address [Passes]] ["Command String"]
+bu[ID] [Options] [Address [Passes]] ["Command String"]
+bm[Options]  SymbolPattern [Passes] ["Command String"]
+
+; 硬件断点
+ba [ID] Access Size [Option] [Address[Passes]] ["Command String"]
+```
+
+- `bp` 软件断点
+- `ba` 硬件断点
+  - `ba r1 0x401000` 读0x401000 >= 1bytes
+- `bu` 未加载模块断点
+- `bm` 符号特征断点 (Set Symbol Breakpoint)
+  - `bm msvcr80d!print*`
+- `bl` 列举断点
+- `bc` 清除断点
+- `bd/be` 禁用/启用断点
+
+TODO: 条件断点
+
+### 栈回溯
+
 
 ## more to learn
 - https://medium.com/@yardenshafir2/windbg-the-fun-way-part-1-2e4978791f9b new way
 - https://blogs.keysight.com/blogs/tech/nwvs.entry.html/2020/07/27/debugging_malwarewi-hk5u.html log
 - https://github.com/hugsy/defcon_27_windbg_workshop/blob/master/windbg_cheatsheet.md must memorize
+- https://bbs.pediy.com/thread-250670.htm
 
 
 # msf
