@@ -9,6 +9,35 @@
 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
+## go
+
+启用 Go Modules 功能
+```
+go env -w GO111MODULE=on
+```
+
+七牛
+
+```
+go env -w  GOPROXY=https://goproxy.cn,direct
+```
+
+阿里云
+
+```
+go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+```
+
+goproxy
+```
+go env -w  GOPROXY=https://goproxy.io,direct
+```
+
+查看：
+
+go env | grep GOPROXY
+
+
 ## npm
 
 ```
