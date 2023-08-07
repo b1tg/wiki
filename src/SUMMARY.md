@@ -10,6 +10,7 @@
   - [arch linux](./linux-arch.md)
   - [bash](./bash.md)
   - [tools](./tools.md)
+  - [qa](./qa.md)
 - [security](./security.md)
   - [_windbg_cheatsheet](./windbg_cheatsheet.md)
   - [re](./re.md)

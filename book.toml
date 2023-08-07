@@ -6,6 +6,7 @@ src = "src"
 
 [output.html.playground]
 editable = true
-
+#copy-js = true
+#line-numbers = true
 [output.html]
 additional-css = ["custom.css"]

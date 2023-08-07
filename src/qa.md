@@ -65,7 +65,6 @@ Q: 使用 drrun.exe 收集
 
 ```
 G:\clean\2023-07\2023-07-cov-ghidra>D:\working\wafl-play\DynamoRIO-Windows-8.0.18752\bin64\drrun.exe -t drcov -- test_cov.exe
-
 ```
 
 
