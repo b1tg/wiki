@@ -10,3 +10,4 @@ editable = true
 #line-numbers = true
 [output.html]
 additional-css = ["custom.css"]
+mathjax-support = true

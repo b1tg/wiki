@@ -69,6 +69,15 @@ G:\clean\2023-07\2023-07-cov-ghidra>D:\working\wafl-play\DynamoRIO-Windows-8.0.1
 
 
 
+Q: 显示某个地址对应的函数
 
-
+```
+0:000> uf 751318fc
+KERNEL32!_imp__SleepEx:
+751318fc 40              inc     eax
+751318fd c3              ret
+0:000> uf 751318fd
+KERNEL32!_imp__SleepEx+0x1:
+751318fd c3              ret
+```
 
