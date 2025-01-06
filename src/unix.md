@@ -37,6 +37,14 @@ go env -w  GOPROXY=https://goproxy.io,direct
 
 go env | grep GOPROXY
 
+安装：
+
+```
+curl https://dl.google.com/go/go1.23.4.linux-amd64.tar.gz -O
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+```
+
 
 ## npm
 
@@ -78,6 +86,15 @@ registry = "https://mirrors.ustc.edu.cn/crates.io-index"
 
 
 ```
+
+
+## install docker
+
+```
+curl -fsSL https://get.docker.com | bash -s docker
+```
+
+
 
 ## rustup (install rust)
 
